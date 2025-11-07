@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://u1j7anamtnu0"]
+
+[ext_resource type="Texture2D" uid="uid://be668q15cjxe1" path="res://Images/Platforms/Grass (2).png" id="1_0vl6u"]
+[ext_resource type="Texture2D" uid="uid://cba8mg5beglow" path="res://Images/Backgrounds/Sky.png" id="1_spfbl"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_spfbl"]
+
+[node name="Game" type="Node2D"]
+material = SubResource("CanvasItemMaterial_spfbl")
+position = Vector2(298, 476)
+
+[node name="Sky" type="Sprite2D" parent="."]
+position = Vector2(686.99994, 11.9999485)
+scale = Vector2(6.2999997, 5.6)
+texture = ExtResource("1_spfbl")
+
+[node name="GrassPlatform" type="Sprite2D" parent="."]
+position = Vector2(693, 28.999996)
+scale = Vector2(6.305468, 5.819444)
+texture = ExtResource("1_0vl6u")
