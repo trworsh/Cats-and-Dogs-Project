@@ -1,10 +1,52 @@
-[gd_scene load_steps=2 format=3 uid="uid://7y062duoyiw7"]
+[gd_scene load_steps=3 format=3 uid="uid://7y062duoyiw7"]
 
+[ext_resource type="Script" uid="uid://7kfa81p6jysv" path="res://mainmenu.gd" id="1_eiy7p"]
 [ext_resource type="Texture2D" uid="uid://bt4fnbr4f7j6l" path="res://Images/Backgrounds/MainMenu.png" id="1_i26rj"]
 
-[node name="MainMenu" type="Node2D"]
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eiy7p")
 
 [node name="MainMenu" type="Sprite2D" parent="."]
-position = Vector2(957, 537.5)
-scale = Vector2(6.03125, 6.016667)
+position = Vector2(959.24994, 541)
+scale = Vector2(6.0046873, 5.9888887)
 texture = ExtResource("1_i26rj")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -153.0
+offset_top = 173.00006
+offset_right = -23.0
+offset_bottom = 274.00006
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.9999988, 3.1200004)
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Start Game"
+
+[node name="OptionsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Options	"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Quit to Desktop"
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method=" _on_OptionsButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
