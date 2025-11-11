@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://u1j7anamtnu0"]
+[gd_scene load_steps=8 format=3 uid="uid://u1j7anamtnu0"]
 
 [ext_resource type="Texture2D" uid="uid://be668q15cjxe1" path="res://Images/Platforms/Grass (2).png" id="1_0vl6u"]
+[ext_resource type="Script" uid="uid://btmcevmiuf5sr" path="res://test_game.gd" id="1_l4sbq"]
 [ext_resource type="Texture2D" uid="uid://cba8mg5beglow" path="res://Images/Backgrounds/Sky.png" id="1_spfbl"]
 [ext_resource type="PackedScene" uid="uid://bq2ljhsb0qd55" path="res://cat.tscn" id="3_fnh2o"]
 [ext_resource type="PackedScene" uid="uid://bwk8wrqtj260w" path="res://dog.tscn" id="5_5dbfl"]
@@ -13,6 +14,7 @@ size = Vector2(320.20694, 32.8544)
 [node name="Game" type="Node2D"]
 material = SubResource("CanvasItemMaterial_spfbl")
 position = Vector2(298, 476)
+script = ExtResource("1_l4sbq")
 
 [node name="Sky" type="Sprite2D" parent="."]
 position = Vector2(686.99994, 11.9999485)
