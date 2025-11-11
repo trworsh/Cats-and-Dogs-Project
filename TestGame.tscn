@@ -20,8 +20,6 @@ scale = Vector2(6.2999997, 5.6)
 texture = ExtResource("1_spfbl")
 metadata/_edit_lock_ = true
 
-[node name="Cat" parent="." instance=ExtResource("3_fnh2o")]
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(693, 29)
 scale = Vector2(6.305468, 5.8194437)
@@ -35,4 +33,8 @@ position = Vector2(-0.40081787, 74.13125)
 scale = Vector2(1, 0.9999998)
 shape = SubResource("RectangleShape2D_l4sbq")
 
+[node name="cat" parent="." instance=ExtResource("3_fnh2o")]
+speed = 500.0
+
 [node name="Dog" parent="." instance=ExtResource("5_5dbfl")]
+position = Vector2(417, -4)

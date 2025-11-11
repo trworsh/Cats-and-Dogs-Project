@@ -46,7 +46,10 @@ func _physics_process(delta: float) -> void:
 
 # --- Animation and Facing Direction ---
 	if not is_on_floor():
-		anim_sprite.play("jump")
+		if velocity.y < 0:
+			anim_sprite.play("jump")   # moving up
+		if velocity.y >= 0:
+			anim_sprite.play("fall")   # moving down
 	else:
 		if input_dir != 0:
 			anim_sprite.play("walk cycle")
