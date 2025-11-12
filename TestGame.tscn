@@ -8,28 +8,28 @@
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_spfbl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l4sbq"]
-size = Vector2(320.20694, 32.8544)
+size = Vector2(320.03967, 32.8544)
 
 [node name="Game" type="Node2D"]
 material = SubResource("CanvasItemMaterial_spfbl")
 position = Vector2(298, 476)
 
 [node name="Sky" type="Sprite2D" parent="."]
-position = Vector2(686.99994, 11.9999485)
+position = Vector2(710, 28.00001)
 scale = Vector2(6.2999997, 5.6)
 texture = ExtResource("1_spfbl")
-metadata/_edit_lock_ = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(693, 29)
+position = Vector2(714, 77)
 scale = Vector2(6.305468, 5.8194437)
 
 [node name="GrassPlatform" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-1.1894399, 0.2792435)
+scale = Vector2(1.002602, 1.0031028)
 texture = ExtResource("1_0vl6u")
-metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-0.40081787, 74.13125)
+position = Vector2(-0.63438416, 74.13123)
 scale = Vector2(1, 0.9999998)
 shape = SubResource("RectangleShape2D_l4sbq")
 
@@ -37,4 +37,4 @@ shape = SubResource("RectangleShape2D_l4sbq")
 speed = 500.0
 
 [node name="Dog" parent="." instance=ExtResource("5_5dbfl")]
-position = Vector2(417, -4)
+position = Vector2(400, 1)
