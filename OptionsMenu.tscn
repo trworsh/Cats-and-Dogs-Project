@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dy3r57flci71d"]
+[gd_scene load_steps=3 format=3 uid="uid://dy3r57flci71d"]
 
 [ext_resource type="Script" uid="uid://dn2c8mprapxq5" path="res://options_menu.gd" id="1_58l1r"]
+[ext_resource type="FontFile" uid="uid://shfgnripfvo4" path="res://Fonts/gomarice_kinako_mochi.ttf" id="2_pjigs"]
 
 [node name="OptionsMenu" type="Control"]
 layout_mode = 3
@@ -33,9 +34,10 @@ layout_mode = 2
 layout_mode = 0
 offset_left = 32.0
 offset_top = 919.99994
-offset_right = 146.0
+offset_right = 162.89362
 offset_bottom = 950.99994
 scale = Vector2(2.2766578, 4.118629)
+theme_override_fonts/font = ExtResource("2_pjigs")
 text = "Back to Menu"
 
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/Volume" to="." method="_on_volume_value_changed"]

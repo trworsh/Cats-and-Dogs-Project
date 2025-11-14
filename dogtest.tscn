@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://cwxemhu8q7icv"]
+
+[ext_resource type="Texture2D" uid="uid://be668q15cjxe1" path="res://Images/Platforms/Grass (2).png" id="1_5ga22"]
+[ext_resource type="Texture2D" uid="uid://poc3pvup8hgu" path="res://Images/Tutorial/TutorialBackground.png" id="2_entyj"]
+[ext_resource type="PackedScene" uid="uid://bwk8wrqtj260w" path="res://dog.tscn" id="3_78x0e"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_spfbl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l4sbq"]
+size = Vector2(320.03967, 32.8544)
+
+[node name="Game" type="Node2D"]
+material = SubResource("CanvasItemMaterial_spfbl")
+position = Vector2(298, 476)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(714, 77)
+scale = Vector2(6.305468, 5.8194437)
+
+[node name="GrassPlatform" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-1.1894399, 0.2792435)
+scale = Vector2(1.002602, 1.0031028)
+texture = ExtResource("1_5ga22")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-0.63438416, 74.13123)
+scale = Vector2(1, 0.9999998)
+shape = SubResource("RectangleShape2D_l4sbq")
+
+[node name="TutorialBackground" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(708, 67)
+scale = Vector2(6.303125, 5.9944444)
+texture = ExtResource("2_entyj")
+
+[node name="Dog" parent="." instance=ExtResource("3_78x0e")]
