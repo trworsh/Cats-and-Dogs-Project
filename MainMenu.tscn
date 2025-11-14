@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://7y062duoyiw7"]
+[gd_scene load_steps=5 format=3 uid="uid://7y062duoyiw7"]
 
 [ext_resource type="Script" uid="uid://7kfa81p6jysv" path="res://mainmenu.gd" id="1_eiy7p"]
 [ext_resource type="Texture2D" uid="uid://bt4fnbr4f7j6l" path="res://Images/Backgrounds/MainMenu.png" id="1_i26rj"]
 [ext_resource type="FontFile" uid="uid://shfgnripfvo4" path="res://Fonts/gomarice_kinako_mochi.ttf" id="3_h7a2f"]
+[ext_resource type="AudioStream" uid="uid://qwx8mr5t71ey" path="res://Music/MainMenu.mp3" id="4_qoqlk"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -55,8 +56,13 @@ size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("3_h7a2f")
 text = "Quit to Desktop"
 
-[connection signal="pressed" from="VBoxContainer/CatButton" to="." method="_on_cat_button_pressed"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_qoqlk")
+autoplay = true
+parameters/looping = true
+
 [connection signal="pressed" from="VBoxContainer/CatButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/CatButton" to="." method="_on_cat_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/DogButton" to="." method="_on_dog_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method=" _on_OptionsButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
