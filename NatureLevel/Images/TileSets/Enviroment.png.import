@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1ullyx05203k"
-path="res://.godot/imported/TreeFront.png-5fbb1ad5d81d3e6837f8eda7499da2b5.ctex"
+uid="uid://df8lvhbot7gnv"
+path="res://.godot/imported/Enviroment.png-db390fc8ddfa48b9e6eb1d5b2d156290.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Backgrounds/TreeFront.png"
-dest_files=["res://.godot/imported/TreeFront.png-5fbb1ad5d81d3e6837f8eda7499da2b5.ctex"]
+source_file="res://NatureLevel/Images/TileSets/Enviroment.png"
+dest_files=["res://.godot/imported/Enviroment.png-db390fc8ddfa48b9e6eb1d5b2d156290.ctex"]
 
 [params]
 
