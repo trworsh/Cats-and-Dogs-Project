@@ -5,7 +5,6 @@
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tkowa"]
 texture = ExtResource("2_qpydo")
-texture_region_size = Vector2i(64, 64)
 1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0
@@ -845,7 +844,6 @@ texture_region_size = Vector2i(64, 64)
 44:25/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_1m7me"]
-tile_size = Vector2i(64, 64)
 sources/0 = SubResource("TileSetAtlasSource_tkowa")
 
 [node name="NatureLevel" type="Control"]
