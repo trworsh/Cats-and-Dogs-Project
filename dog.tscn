@@ -54,12 +54,14 @@ size = Vector2(398, 187)
 [node name="Dog" type="CharacterBody2D"]
 script = ExtResource("1_jurjn")
 speed = 1250.0
+jump_force = 500.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-2.3841858e-07, 9.536743e-07)
 scale = Vector2(17.19, 15.594)
 sprite_frames = SubResource("SpriteFrames_ffrtg")
-animation = &"fall"
+animation = &"idle"
+frame_progress = 0.008166267
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(7, -0.5)
