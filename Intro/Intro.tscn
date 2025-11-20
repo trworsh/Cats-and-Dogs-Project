@@ -1,15 +1,125 @@
-[gd_scene load_steps=17 format=3 uid="uid://cyidi58rftwhq"]
+[gd_scene load_steps=16 format=3 uid="uid://cyidi58rftwhq"]
 
 [ext_resource type="Texture2D" uid="uid://1abgo7gsjho4" path="res://Intro/Images/HousePerson.png" id="1_ic8fc"]
-[ext_resource type="Texture2D" uid="uid://bogfk0hkjg5dg" path="res://Images/Backgrounds/House.png" id="2_tddqi"]
 [ext_resource type="Texture2D" uid="uid://dfu4kpjh5gv06" path="res://Images/Sprites/Cat/CatStand.png" id="3_pf2mr"]
 [ext_resource type="Texture2D" uid="uid://3ctlmh878frj" path="res://Images/Sprites/Dog/DogStand.png" id="4_rgkhc"]
+[ext_resource type="AudioStream" uid="uid://cukfjb2kr7cgt" path="res://Sounds/Owner.mp3" id="5_tddqi"]
 [ext_resource type="Texture2D" uid="uid://gya6ffuw8s1f" path="res://Intro/Fight1.png" id="5_vouss"]
 [ext_resource type="Texture2D" uid="uid://dw6vwaajhki2m" path="res://Intro/Fight2.png" id="6_lu1cp"]
 [ext_resource type="Texture2D" uid="uid://dtw26hbw2tgdc" path="res://Intro/Fight3.png" id="7_w50vd"]
 [ext_resource type="Texture2D" uid="uid://du0jh66eeaspy" path="res://Intro/Fight4.png" id="8_nqmjb"]
-[ext_resource type="Texture2D" uid="uid://b686kddnt7bwa" path="res://Intro/TextBubble.png" id="9_yxf4i"]
+[ext_resource type="Texture2D" uid="uid://b3k10lb6vm8vj" path="res://Images/TextBubble.png" id="9_tddqi"]
 [ext_resource type="Script" uid="uid://bnk3gg1xua02f" path="res://Intro/label.gd" id="10_88hcu"]
+[ext_resource type="FontFile" uid="uid://shfgnripfvo4" path="res://Fonts/gomarice_kinako_mochi.ttf" id="10_pf2mr"]
+
+[sub_resource type="Animation" id="Animation_xq0fq"]
+resource_name = "Intro"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Dog:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Cat:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Background:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_7or2k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Dog:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Cat:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Background:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xmi88"]
+_data = {
+&"Intro": SubResource("Animation_xq0fq"),
+&"RESET": SubResource("Animation_7or2k")
+}
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_16g1m"]
 animations = [{
@@ -31,241 +141,52 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_o0u1n"]
-specular_color = Color(0, 0, 0, 1)
+[node name="IntroScene" type="Node2D"]
 
-[sub_resource type="Animation" id="Animation_xq0fq"]
-resource_name = "Intro"
-length = 10.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("BackgroundA:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("BackgroundB:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("NinePatchRect:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(1, 1.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("NinePatchRect:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(1, 1.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/4/type = "method"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("NinePatchRect/Label")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"values": []
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Dog:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Cat:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("BackgroundA:modulate")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 0,
-"values": []
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Black:modulate")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_xmi88")
 }
 
-[sub_resource type="Animation" id="Animation_yixaa"]
-resource_name = "Fight"
+[node name="BlackFade" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
 
-[sub_resource type="Animation" id="Animation_7or2k"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("BackgroundA:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("BackgroundB:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("NinePatchRect:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("NinePatchRect:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Dog:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Cat:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("BackgroundA:modulate")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Black:modulate")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_xmi88"]
-_data = {
-&"Fight": SubResource("Animation_yixaa"),
-&"Intro": SubResource("Animation_xq0fq"),
-&"RESET": SubResource("Animation_7or2k")
-}
-
-[node name="Cutscene" type="Node2D"]
-
-[node name="BackgroundA" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="."]
 position = Vector2(959.99994, 540.49994)
 scale = Vector2(6.0062504, 6.0166664)
 texture = ExtResource("1_ic8fc")
 
-[node name="BackgroundB" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(959.99994, 540.49994)
-scale = Vector2(6.0062504, 6.0166664)
-texture = ExtResource("2_tddqi")
+[node name="Textbubble" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 990.0
+offset_top = 216.0
+offset_right = 1558.0
+offset_bottom = 370.0
+
+[node name="BubbleGraphic" type="NinePatchRect" parent="Textbubble"]
+layout_mode = 0
+offset_left = -10.0
+offset_top = -19.0
+offset_right = 601.0
+offset_bottom = 172.0
+texture = ExtResource("9_tddqi")
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="BubbleText" type="Label" parent="Textbubble"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("10_pf2mr")
+autowrap_mode = 3
+script = ExtResource("10_88hcu")
+
+[node name="LetterTimer" type="Timer" parent="Textbubble/BubbleText"]
+wait_time = 0.05
+
+[node name="VoiceSFX" type="AudioStreamPlayer" parent="Textbubble"]
+stream = ExtResource("5_tddqi")
 
 [node name="Cat" type="Sprite2D" parent="."]
 position = Vector2(1650, 800)
@@ -285,27 +206,4 @@ scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_16g1m")
 animation = &"smoke"
 
-[node name="Black" type="Sprite2D" parent="."]
-modulate = Color(0, 0, 0, 1)
-position = Vector2(967.75, 540.75)
-scale = Vector2(1936.5, 1082.4999)
-texture = SubResource("CanvasTexture_o0u1n")
-
-[node name="NinePatchRect" type="NinePatchRect" parent="."]
-visible = false
-offset_left = 826.0
-offset_top = 208.0
-offset_right = 1514.0
-offset_bottom = 341.0
-texture = ExtResource("9_yxf4i")
-
-[node name="Label" type="Label" parent="NinePatchRect"]
-layout_mode = 0
-offset_right = 687.0
-offset_bottom = 130.0
-script = ExtResource("10_88hcu")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_xmi88")
-}
+[connection signal="timeout" from="Textbubble/BubbleText/LetterTimer" to="Textbubble/BubbleText" method="_on_letter_timer_timeout"]

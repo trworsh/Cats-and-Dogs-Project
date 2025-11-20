@@ -1,18 +1,20 @@
 extends Label
 
-@export var text_to_display: String = "Hey, I'm heading out! You two get along!"
-@export var letter_delay := 0.03
+@onready var timer = $LetterTimer
 
-var current_index := 0
+var full_text := ""
+var index := 0
 
-func start_typewriter():
+func start_typewriter(text_to_show: String):
+	full_text = text_to_show
+	index = 0
 	text = ""
-	current_index = 0
-	call_deferred("_type_letter")
+	timer.start()
 
-func _type_letter():
-	if current_index < text_to_display.length():
-		text += text_to_display[current_index]
-		current_index += 1
-		await get_tree().create_timer(letter_delay).timeout
-		_type_letter()
+
+func _on_letter_timer_timeout() -> void:
+	if index < full_text.length():
+		text += full_text[index]
+		index += 1
+	else:
+		timer.stop()
