@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://cyidi58rftwhq"]
+[gd_scene load_steps=17 format=3 uid="uid://cyidi58rftwhq"]
 
 [ext_resource type="Texture2D" uid="uid://1abgo7gsjho4" path="res://Intro/Images/HousePerson.png" id="1_ic8fc"]
+[ext_resource type="Script" uid="uid://dwqwln34tmily" path="res://Intro/animation_player.gd" id="1_pf2mr"]
 [ext_resource type="Texture2D" uid="uid://dfu4kpjh5gv06" path="res://Images/Sprites/Cat/CatStand.png" id="3_pf2mr"]
 [ext_resource type="Texture2D" uid="uid://3ctlmh878frj" path="res://Images/Sprites/Dog/DogStand.png" id="4_rgkhc"]
 [ext_resource type="AudioStream" uid="uid://cukfjb2kr7cgt" path="res://Sounds/Owner.mp3" id="5_tddqi"]
@@ -63,6 +64,42 @@ tracks/3/keys = {
 "update": 0,
 "values": []
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Fade:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Textbubble/VoiceSFX:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.46666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Textbubble/BubbleText:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_7or2k"]
 length = 0.001
@@ -114,6 +151,42 @@ tracks/3/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Fade:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Textbubble/VoiceSFX:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Textbubble/BubbleText:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xmi88"]
 _data = {
@@ -147,10 +220,8 @@ animations = [{
 libraries = {
 &"": SubResource("AnimationLibrary_xmi88")
 }
-
-[node name="BlackFade" type="ColorRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+playback_auto_capture_duration = 0.0
+script = ExtResource("1_pf2mr")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(959.99994, 540.49994)
@@ -167,18 +238,24 @@ offset_bottom = 370.0
 
 [node name="BubbleGraphic" type="NinePatchRect" parent="Textbubble"]
 layout_mode = 0
-offset_left = -10.0
-offset_top = -19.0
+offset_left = -141.0
+offset_top = -21.0
 offset_right = 601.0
 offset_bottom = 172.0
 texture = ExtResource("9_tddqi")
 region_rect = Rect2(0, 0, 64, 64)
 
 [node name="BubbleText" type="Label" parent="Textbubble"]
+visible = false
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = -102.0
+offset_top = 49.0
+offset_right = 588.0
+offset_bottom = 93.0
+theme_override_colors/font_color = Color(0.13333334, 0.5921569, 0.7294118, 1)
 theme_override_fonts/font = ExtResource("10_pf2mr")
+theme_override_font_sizes/font_size = 36
+text = "Hey I am going out! You two better behave!"
 autowrap_mode = 3
 script = ExtResource("10_88hcu")
 
@@ -205,5 +282,10 @@ position = Vector2(980, 724)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_16g1m")
 animation = &"smoke"
+
+[node name="Fade" type="ColorRect" parent="."]
+offset_right = 1919.0
+offset_bottom = 1073.0
+color = Color(0, 0, 0, 1)
 
 [connection signal="timeout" from="Textbubble/BubbleText/LetterTimer" to="Textbubble/BubbleText" method="_on_letter_timer_timeout"]
