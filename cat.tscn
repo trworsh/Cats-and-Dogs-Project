@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dfu4kpjh5gv06" path="res://Images/Sprites/Cat/CatStand.png" id="2_2hdoq"]
 [ext_resource type="Texture2D" uid="uid://cif1s80m54f36" path="res://Images/Sprites/Cat/CatFall.png" id="2_2v165"]
 [ext_resource type="Texture2D" uid="uid://brim4cm80rwb8" path="res://Images/Sprites/Cat/CatIdle.png" id="3_2v165"]
-[ext_resource type="Texture2D" uid="uid://dgckho5uehauu" path="res://Images/Sprites/Cat/CatJump.png" id="4_eyw7o"]
+[ext_resource type="Texture2D" uid="uid://dgckho5uehauu" path="res://Images/CatJump.png" id="4_eyw7o"]
 [ext_resource type="Texture2D" uid="uid://dcgtjj2d5ra34" path="res://Images/Sprites/Cat/CatWalk.png" id="5_7rjga"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kgn2u"]
