@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b5n4bu7w60pjy"]
+[gd_scene load_steps=6 format=3 uid="uid://b5n4bu7w60pjy"]
 
 [ext_resource type="Texture2D" uid="uid://b1ullyx05203k" path="res://NatureLevel/Images/Background/TreeFront.png" id="1_7u12u"]
 [ext_resource type="Texture2D" uid="uid://df8lvhbot7gnv" path="res://NatureLevel/Images/TileSets/Enviroment.png" id="2_qpydo"]
+[ext_resource type="PackedScene" uid="uid://bwk8wrqtj260w" path="res://dog.tscn" id="3_qpydo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tkowa"]
 texture = ExtResource("2_qpydo")
@@ -863,3 +864,5 @@ texture = ExtResource("1_7u12u")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_set = SubResource("TileSet_1m7me")
+
+[node name="Dog" parent="." instance=ExtResource("3_qpydo")]
