@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://b5n4bu7w60pjy"]
+[gd_scene load_steps=9 format=3 uid="uid://b5n4bu7w60pjy"]
 
 [ext_resource type="Texture2D" uid="uid://b1ullyx05203k" path="res://NatureLevel/Images/Background/TreeFront.png" id="1_7u12u"]
 [ext_resource type="Texture2D" uid="uid://df8lvhbot7gnv" path="res://NatureLevel/Images/TileSets/Enviroment.png" id="2_qpydo"]
 [ext_resource type="Texture2D" uid="uid://c271ouyn7dlfm" path="res://Images/Platforms/Branch12.png" id="3_qpydo"]
+[ext_resource type="PackedScene" uid="uid://bwk8wrqtj260w" path="res://dog.tscn" id="4_tkowa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tkowa"]
 texture = ExtResource("2_qpydo")
@@ -886,3 +887,7 @@ position = Vector2(3.6239624e-05, 1.5000153)
 scale = Vector2(0.9999998, 0.9999998)
 shape = SubResource("RectangleShape2D_1m7me")
 one_way_collision = true
+
+[node name="Dog" parent="." instance=ExtResource("4_tkowa")]
+position = Vector2(702.99994, 304.99997)
+scale = Vector2(0.4, 0.4)
