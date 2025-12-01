@@ -1,9 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://7y062duoyiw7"]
+[gd_scene load_steps=5 format=3 uid="uid://bbbk3i2f6ppfi"]
 
-[ext_resource type="Script" uid="uid://7kfa81p6jysv" path="res://mainmenu.gd" id="1_eiy7p"]
-[ext_resource type="Texture2D" uid="uid://bt4fnbr4f7j6l" path="res://Images/Backgrounds/MainMenu.png" id="1_i26rj"]
-[ext_resource type="FontFile" uid="uid://shfgnripfvo4" path="res://Fonts/gomarice_kinako_mochi.ttf" id="3_h7a2f"]
-[ext_resource type="AudioStream" uid="uid://qwx8mr5t71ey" path="res://Music/MainMenu.mp3" id="4_qoqlk"]
+[ext_resource type="Script" uid="uid://7kfa81p6jysv" path="res://mainmenu.gd" id="1_jix8l"]
+[ext_resource type="Texture2D" uid="uid://bt4fnbr4f7j6l" path="res://Images/Backgrounds/MainMenu.png" id="2_glbon"]
+[ext_resource type="FontFile" uid="uid://shfgnripfvo4" path="res://Fonts/gomarice_kinako_mochi.ttf" id="3_nlkkf"]
+[ext_resource type="AudioStream" uid="uid://qwx8mr5t71ey" path="res://Music/MainMenu.mp3" id="4_qe12f"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -12,12 +12,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_eiy7p")
+script = ExtResource("1_jix8l")
 
 [node name="MainMenu" type="Sprite2D" parent="."]
 position = Vector2(959.24994, 541)
 scale = Vector2(6.0046873, 5.9888887)
-texture = ExtResource("1_i26rj")
+texture = ExtResource("2_glbon")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -26,53 +26,56 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -153.0
-offset_top = 173.00006
-offset_right = -23.0
-offset_bottom = 274.00006
+offset_left = -132.0
+offset_top = 214.99994
+offset_right = 91.0
+offset_bottom = 390.99994
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(2.9999988, 3.1200004)
+scale = Vector2(1.6057802, 1.7117318)
 
 [node name="CatButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_h7a2f")
-theme_override_font_sizes/font_size = 16
+theme_override_fonts/font = ExtResource("3_nlkkf")
+theme_override_font_sizes/font_size = 32
 text = "Cat"
 
 [node name="DogButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_h7a2f")
+theme_override_fonts/font = ExtResource("3_nlkkf")
+theme_override_font_sizes/font_size = 32
 text = "Dog"
 
 [node name="OptionsButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_h7a2f")
+theme_override_fonts/font = ExtResource("3_nlkkf")
+theme_override_font_sizes/font_size = 32
 text = "Options	"
 
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_fonts/font = ExtResource("3_h7a2f")
+theme_override_fonts/font = ExtResource("3_nlkkf")
+theme_override_font_sizes/font_size = 32
 text = "Quit to Desktop"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 1229.0
-offset_top = 970.0
-offset_right = 1453.0
-offset_bottom = 1055.0
+offset_left = 1212.0
+offset_top = 966.0
+offset_right = 1436.0
+offset_bottom = 1051.0
 
 [node name="ReplayIntroButton" type="Button" parent="VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("3_h7a2f")
+theme_override_fonts/font = ExtResource("3_nlkkf")
 theme_override_font_sizes/font_size = 32
 text = "Replay Intro"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_qoqlk")
+stream = ExtResource("4_qe12f")
 autoplay = true
 parameters/looping = true
 
