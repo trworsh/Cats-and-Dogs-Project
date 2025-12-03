@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtgnbocj0vot6"]
+
+[ext_resource type="Texture2D" uid="uid://b1ullyx05203k" path="res://NatureLevel/Images/Background/TreeFront.png" id="1_bbnc1"]
+[ext_resource type="PackedScene" uid="uid://bwk8wrqtj260w" path="res://dog.tscn" id="2_1geof"]
+[ext_resource type="PackedScene" uid="uid://dwejwthfke6gj" path="res://platform.tscn" id="3_27vhs"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(959.2223, 539)
+scale = Vector2(-16.39422, 22.600723)
+texture = ExtResource("1_bbnc1")
+
+[node name="background2" type="Sprite2D" parent="."]
+position = Vector2(6911.0005, 528.00006)
+scale = Vector2(20.807814, 22.966908)
+texture = ExtResource("1_bbnc1")
+
+[node name="background" type="Sprite2D" parent="background2"]
+position = Vector2(306.47137, 4.7024164)
+scale = Vector2(-1.1301745, 1.2061436)
+texture = ExtResource("1_bbnc1")
+
+[node name="background2" type="Sprite2D" parent="background2"]
+position = Vector2(689.837, 4.833039)
+scale = Vector2(1.2697467, 1.2450279)
+texture = ExtResource("1_bbnc1")
+
+[node name="Dog" parent="." instance=ExtResource("2_1geof")]
+position = Vector2(-1167, -74)
+
+[node name="Camera2D" type="Camera2D" parent="Dog"]
+position = Vector2(832, -433)
+zoom = Vector2(0.75, 0.75)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("3_27vhs")]
+modulate = Color(0.6872149, 0.68721503, 0.6872149, 1)
+position = Vector2(968, 557)
+scale = Vector2(41.158028, 13.0594425)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("3_27vhs")]
+modulate = Color(0.3689597, 0.3434021, 0.31718084, 1)
+position = Vector2(-3502, -730)
+rotation = -1.5572245
+scale = Vector2(25.990915, 20.53961)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("3_27vhs")]
+position = Vector2(2115, 988.00006)
+scale = Vector2(6.305468, 4.099443)

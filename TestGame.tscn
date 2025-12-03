@@ -1,32 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://u1j7anamtnu0"]
+[gd_scene load_steps=6 format=3 uid="uid://u1j7anamtnu0"]
 
-[ext_resource type="Texture2D" uid="uid://be668q15cjxe1" path="res://Images/Platforms/Grass (2).png" id="1_0vl6u"]
+[ext_resource type="PackedScene" uid="uid://dwejwthfke6gj" path="res://platform.tscn" id="1_l4sbq"]
 [ext_resource type="PackedScene" uid="uid://bq2ljhsb0qd55" path="res://cat.tscn" id="3_fnh2o"]
 [ext_resource type="Texture2D" uid="uid://poc3pvup8hgu" path="res://Images/Tutorial/TutorialBackground.png" id="4_l4sbq"]
 [ext_resource type="PackedScene" uid="uid://bwk8wrqtj260w" path="res://dog.tscn" id="5_5dbfl"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_spfbl"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_l4sbq"]
-size = Vector2(320.03967, 32.8544)
-
 [node name="Game" type="Node2D"]
 material = SubResource("CanvasItemMaterial_spfbl")
 position = Vector2(298, 476)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" parent="." instance=ExtResource("1_l4sbq")]
 position = Vector2(714, 77)
-scale = Vector2(6.305468, 5.8194437)
-
-[node name="GrassPlatform" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(-1.1894399, 0.2792435)
-scale = Vector2(1.002602, 1.0031028)
-texture = ExtResource("1_0vl6u")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-0.63438416, 74.13123)
-scale = Vector2(1, 0.9999998)
-shape = SubResource("RectangleShape2D_l4sbq")
 
 [node name="cat" parent="." instance=ExtResource("3_fnh2o")]
 speed = 500.0
