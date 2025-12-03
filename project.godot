@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Cats-and-dogs-project"
-run/main_scene="uid://bbbk3i2f6ppfi"
+run/main_scene="uid://cyidi58rftwhq"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
