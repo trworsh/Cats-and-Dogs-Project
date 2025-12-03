@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bbbk3i2f6ppfi"]
+[gd_scene load_steps=6 format=3 uid="uid://bbbk3i2f6ppfi"]
 
 [ext_resource type="Script" uid="uid://7kfa81p6jysv" path="res://mainmenu.gd" id="1_jix8l"]
 [ext_resource type="Texture2D" uid="uid://bt4fnbr4f7j6l" path="res://Images/Backgrounds/MainMenu.png" id="2_glbon"]
 [ext_resource type="FontFile" uid="uid://shfgnripfvo4" path="res://Fonts/gomarice_kinako_mochi.ttf" id="3_nlkkf"]
 [ext_resource type="AudioStream" uid="uid://qwx8mr5t71ey" path="res://Music/MainMenu.mp3" id="4_qe12f"]
+[ext_resource type="Texture2D" uid="uid://06w0txm56qdd" path="res://NatureLevel/Images/Dogs Cats Logo yay.png" id="5_glbon"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -79,10 +80,15 @@ stream = ExtResource("4_qe12f")
 autoplay = true
 parameters/looping = true
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(983, 248)
+scale = Vector2(0.7266667, 0.7266667)
+texture = ExtResource("5_glbon")
+
 [connection signal="pressed" from="VBoxContainer/CatButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/CatButton" to="." method="_on_cat_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/DogButton" to="." method="_on_dog_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method=" _on_OptionsButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method=" _on_OptionsButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="VBoxContainer2/ReplayIntroButton" to="." method="_on_replay_intro_button_pressed"]
