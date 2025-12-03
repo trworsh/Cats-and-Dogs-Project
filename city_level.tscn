@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dv1dp1wl1ca34"]
+
+[ext_resource type="Texture2D" uid="uid://lho1av3u3bk2" path="res://Images/Backgrounds/CityBackground.png" id="1_rb03s"]
+
+[node name="City_level" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(966, 541.99994)
+scale = Vector2(6.0375, 5.955555)
+texture = ExtResource("1_rb03s")

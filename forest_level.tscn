@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://by8drkowy5h6v"]
+[gd_scene load_steps=7 format=3 uid="uid://by8drkowy5h6v"]
 
 [ext_resource type="Texture2D" uid="uid://b1ullyx05203k" path="res://NatureLevel/Images/Background/TreeFront.png" id="1_bbnc1"]
 [ext_resource type="PackedScene" uid="uid://bwk8wrqtj260w" path="res://dog.tscn" id="2_1geof"]
 [ext_resource type="PackedScene" path="res://platform.tscn" id="3_27vhs"]
 [ext_resource type="Texture2D" uid="uid://cjuduumdgd8d6" path="res://Images/Platforms/SideHouse.png" id="4_co8ne"]
+[ext_resource type="PackedScene" uid="uid://dlyvomy23epxr" path="res://water.tscn" id="4_wutbp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wutbp"]
 size = Vector2(57.044083, 155.93587)
@@ -37,22 +38,6 @@ position = Vector2(-944, 544)
 position = Vector2(832, -433)
 zoom = Vector2(0.75, 0.75)
 
-[node name="StaticBody2D" parent="." instance=ExtResource("3_27vhs")]
-modulate = Color(0.6872149, 0.68721503, 0.6872149, 1)
-position = Vector2(968, 557)
-scale = Vector2(41.158028, 13.0594425)
-
-[node name="StaticBody2D2" parent="." instance=ExtResource("3_27vhs")]
-visible = false
-modulate = Color(0.3689597, 0.3434021, 0.31718084, 1)
-position = Vector2(-3502, -730)
-rotation = -1.5572245
-scale = Vector2(25.990915, 20.53961)
-
-[node name="StaticBody2D3" parent="." instance=ExtResource("3_27vhs")]
-position = Vector2(2115, 988.00006)
-scale = Vector2(6.305468, 4.099443)
-
 [node name="SideHouse" type="Sprite2D" parent="."]
 modulate = Color(0.781407, 0.781407, 0.78140694, 1)
 position = Vector2(-504, 552.875)
@@ -65,3 +50,25 @@ texture = ExtResource("4_co8ne")
 position = Vector2(-133.24167, 13.063393)
 scale = Vector2(1, 0.9999997)
 shape = SubResource("RectangleShape2D_wutbp")
+
+[node name="Water" parent="." instance=ExtResource("4_wutbp")]
+position = Vector2(8278.001, 1210)
+scale = Vector2(5, 5)
+
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="StaticBody2D" parent="Platforms" instance=ExtResource("3_27vhs")]
+modulate = Color(0.6872149, 0.68721503, 0.6872149, 1)
+position = Vector2(968, 557)
+scale = Vector2(41.158028, 13.0594425)
+
+[node name="StaticBody2D2" parent="Platforms" instance=ExtResource("3_27vhs")]
+visible = false
+modulate = Color(0.3689597, 0.3434021, 0.31718084, 1)
+position = Vector2(-3502, -730)
+rotation = -1.5572245
+scale = Vector2(25.990915, 20.53961)
+
+[node name="StaticBody2D3" parent="Platforms" instance=ExtResource("3_27vhs")]
+position = Vector2(2115, 988.00006)
+scale = Vector2(6.305468, 4.099443)
