@@ -1,13 +1,13 @@
-[gd_scene load_steps=27 format=3 uid="uid://cyidi58rftwhq"]
+[gd_scene load_steps=30 format=3 uid="uid://cyidi58rftwhq"]
 
 [ext_resource type="Texture2D" uid="uid://1abgo7gsjho4" path="res://Intro/Images/HousePerson.png" id="1_ic8fc"]
 [ext_resource type="Script" uid="uid://dwqwln34tmily" path="res://Intro/animation_player.gd" id="1_pf2mr"]
 [ext_resource type="Script" uid="uid://ckw0ctylu5kmi" path="res://Intro/intro.gd" id="1_yxf4i"]
 [ext_resource type="Texture2D" uid="uid://bogfk0hkjg5dg" path="res://Images/Backgrounds/House.png" id="2_rgkhc"]
-[ext_resource type="AudioStream" uid="uid://cukfjb2kr7cgt" path="res://Sounds/Owner.mp3" id="5_tddqi"]
 [ext_resource type="Texture2D" uid="uid://gya6ffuw8s1f" path="res://Intro/Fight1.png" id="5_vouss"]
 [ext_resource type="Texture2D" uid="uid://dw6vwaajhki2m" path="res://Intro/Fight2.png" id="6_lu1cp"]
 [ext_resource type="Texture2D" uid="uid://dtw26hbw2tgdc" path="res://Intro/Fight3.png" id="7_w50vd"]
+[ext_resource type="AudioStream" uid="uid://jkrjgxyhh7q0" path="res://Sounds/Owner2.mp3" id="8_16g1m"]
 [ext_resource type="Texture2D" uid="uid://du0jh66eeaspy" path="res://Intro/Fight4.png" id="8_nqmjb"]
 [ext_resource type="Texture2D" uid="uid://brim4cm80rwb8" path="res://Images/Sprites/Cat/CatIdle.png" id="8_yxf4i"]
 [ext_resource type="Texture2D" uid="uid://dcgtjj2d5ra34" path="res://Images/Sprites/Cat/CatWalk.png" id="9_88hcu"]
@@ -20,10 +20,13 @@
 [ext_resource type="Texture2D" uid="uid://ca47ta17e4573" path="res://Images/Sprites/Dog/DogWalk.png" id="12_xq0fq"]
 [ext_resource type="Texture2D" uid="uid://luoi1470dhe6" path="res://Images/Sprites/Dog/DogJump.png" id="13_yixaa"]
 [ext_resource type="AudioStream" uid="uid://c1skowkf7wxop" path="res://Sounds/Bark.mp3" id="16_o0u1n"]
+[ext_resource type="AudioStream" uid="uid://q5mhia2mgsvt" path="res://Music/FightMusic.wav" id="21_xq0fq"]
+[ext_resource type="AudioStream" uid="uid://77eyroriyudb" path="res://Sounds/Glass_break.mp3" id="21_yixaa"]
+[ext_resource type="AudioStream" uid="uid://be8uf78wdu8r0" path="res://Music/IntroMusic.mp3" id="22_yixaa"]
 
 [sub_resource type="Animation" id="Animation_xq0fq"]
 resource_name = "Intro"
-length = 20.0
+length = 23.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -79,10 +82,10 @@ tracks/4/path = NodePath("Textbubble/VoiceSFX:playing")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(1.4),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(2.1666667, 2.5, 5.5333333),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [true]
+"values": [false, true, false]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -91,7 +94,7 @@ tracks/5/path = NodePath("Textbubble/BubbleText:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(3, 6),
+"times": PackedFloat32Array(2.5, 6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -139,10 +142,10 @@ tracks/9/path = NodePath("Cat:frame")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 0, 1, 0, 1, 0, 1, 2]
+"values": [0, 0, 1, 0, 1, 0, 1, 0, 1, 2]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
@@ -211,7 +214,7 @@ tracks/15/path = NodePath(".")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
-"times": PackedFloat32Array(20),
+"times": PackedFloat32Array(22.966667),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -265,6 +268,66 @@ tracks/19/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [-20.0]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("IntroMusic:playing")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 13.266666),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("FightMusic:playing")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(11.733334, 12.1, 17.341515),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("Window:playing")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(16.866667, 17.2, 18.645555),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("Lasttext:visible")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(20.033333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("Lasttext:modulate")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(20.066668, 20.9, 21.633333, 22.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_7or2k"]
@@ -497,6 +560,66 @@ tracks/18/keys = {
 "update": 0,
 "values": [-2.0]
 }
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("IntroMusic:playing")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("FightMusic:playing")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("Window:playing")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("Lasttext:visible")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("Lasttext:modulate")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xmi88"]
 _data = {
@@ -593,15 +716,16 @@ region_rect = Rect2(0, 0, 64, 64)
 
 [node name="BubbleText" type="Label" parent="Textbubble"]
 visible = false
+top_level = true
 layout_mode = 0
-offset_left = -102.0
-offset_top = 49.0
-offset_right = 588.0
-offset_bottom = 93.0
+offset_left = 900.0
+offset_top = 267.0
+offset_right = 1571.0
+offset_bottom = 344.0
 theme_override_colors/font_color = Color(0.13333334, 0.5921569, 0.7294118, 1)
 theme_override_fonts/font = ExtResource("10_pf2mr")
 theme_override_font_sizes/font_size = 36
-text = "Hey I am going out! You two better behave!"
+text = "Hey I'm leaving! You to better get along!"
 autowrap_mode = 3
 script = ExtResource("10_88hcu")
 
@@ -609,7 +733,8 @@ script = ExtResource("10_88hcu")
 wait_time = 0.05
 
 [node name="VoiceSFX" type="AudioStreamPlayer" parent="Textbubble"]
-stream = ExtResource("5_tddqi")
+stream = ExtResource("8_16g1m")
+volume_db = -10.0
 
 [node name="Cat" type="AnimatedSprite2D" parent="."]
 position = Vector2(1650, 800)
@@ -655,6 +780,37 @@ grow_vertical = 0
 theme_override_fonts/font = ExtResource("10_pf2mr")
 theme_override_font_sizes/font_size = 48
 text = "Skip Intro"
+
+[node name="Lasttext" type="Label" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 755.0
+offset_top = 557.0
+offset_right = 1227.0
+offset_bottom = 678.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.13333334, 0.5921569, 0.7294118, 1)
+theme_override_fonts/font = ExtResource("10_pf2mr")
+theme_override_font_sizes/font_size = 48
+text = "No Animals were harmed in the making of this game"
+horizontal_alignment = 1
+
+[node name="Window" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_yixaa")
+volume_db = -15.0
+
+[node name="FightMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_xq0fq")
+volume_db = -30.0
+
+[node name="IntroMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_yixaa")
+volume_db = -20.0
 
 [connection signal="timeout" from="Textbubble/BubbleText/LetterTimer" to="Textbubble/BubbleText" method="_on_letter_timer_timeout"]
 [connection signal="pressed" from="Skip" to="." method="_on_skip_pressed"]

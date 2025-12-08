@@ -1,48 +1,54 @@
-[gd_scene load_steps=7 format=3 uid="uid://by8drkowy5h6v"]
+[gd_scene load_steps=10 format=3 uid="uid://by8drkowy5h6v"]
 
 [ext_resource type="Texture2D" uid="uid://b1ullyx05203k" path="res://NatureLevel/Images/Background/TreeFront.png" id="1_bbnc1"]
 [ext_resource type="PackedScene" uid="uid://bwk8wrqtj260w" path="res://dog.tscn" id="2_1geof"]
 [ext_resource type="PackedScene" path="res://platform.tscn" id="3_27vhs"]
-[ext_resource type="Texture2D" uid="uid://cjuduumdgd8d6" path="res://Images/Platforms/SideHouse.png" id="4_co8ne"]
+[ext_resource type="Texture2D" uid="uid://hnp1go8qbo70" path="res://Images/Platforms/SideHouse-export.png" id="3_wutbp"]
 [ext_resource type="PackedScene" uid="uid://dlyvomy23epxr" path="res://water.tscn" id="4_wutbp"]
+[ext_resource type="Texture2D" uid="uid://dtyqdklbyfyhe" path="res://Images/Platforms/LillyPad.png" id="6_vfmta"]
+[ext_resource type="Texture2D" uid="uid://bnxo0ovifnwxa" path="res://Images/Backgrounds/TreesFront.png" id="7_qemeo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wutbp"]
 size = Vector2(57.044083, 155.93587)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qemeo"]
+size = Vector2(383, 48)
+
 [node name="Node2D" type="Node2D"]
 
-[node name="background" type="Sprite2D" parent="."]
-position = Vector2(959.2223, 539)
-scale = Vector2(-16.39422, 22.600723)
+[node name="Backgrounds" type="Node2D" parent="."]
+
+[node name="background" type="Sprite2D" parent="Backgrounds"]
+position = Vector2(226, 940)
+rotation = 3.1415927
+scale = Vector2(15.5813675, -15.601439)
 texture = ExtResource("1_bbnc1")
 
-[node name="background2" type="Sprite2D" parent="."]
-position = Vector2(6911.0005, 528.00006)
-scale = Vector2(20.807814, 22.966908)
+[node name="background2" type="Sprite2D" parent="Backgrounds"]
+position = Vector2(5211, 939.99994)
+rotation = -3.1415925
+scale = Vector2(15.5813675, -15.601439)
+texture = ExtResource("1_bbnc1")
+flip_h = true
+
+[node name="background3" type="Sprite2D" parent="Backgrounds"]
+position = Vector2(10191.02, 941.1299)
+rotation = -3.1415925
+scale = Vector2(15.5813675, -15.601439)
 texture = ExtResource("1_bbnc1")
 
-[node name="background" type="Sprite2D" parent="background2"]
-position = Vector2(306.47137, 4.7024164)
-scale = Vector2(-1.1301745, 1.2061436)
+[node name="background4" type="Sprite2D" parent="Backgrounds"]
+position = Vector2(15176.02, 941.1299)
+rotation = -3.1415925
+scale = Vector2(15.5813675, -15.601439)
 texture = ExtResource("1_bbnc1")
-
-[node name="background2" type="Sprite2D" parent="background2"]
-position = Vector2(689.837, 4.833039)
-scale = Vector2(1.2697467, 1.2450279)
-texture = ExtResource("1_bbnc1")
-
-[node name="Dog" parent="." instance=ExtResource("2_1geof")]
-position = Vector2(-944, 544)
-
-[node name="Camera2D" type="Camera2D" parent="Dog"]
-position = Vector2(832, -433)
-zoom = Vector2(0.75, 0.75)
+flip_h = true
 
 [node name="SideHouse" type="Sprite2D" parent="."]
 modulate = Color(0.781407, 0.781407, 0.78140694, 1)
-position = Vector2(-504, 552.875)
+position = Vector2(-362, 536)
 scale = Vector2(9.501562, 8.409721)
-texture = ExtResource("4_co8ne")
+texture = ExtResource("3_wutbp")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="SideHouse"]
 
@@ -51,24 +57,87 @@ position = Vector2(-133.24167, 13.063393)
 scale = Vector2(1, 0.9999997)
 shape = SubResource("RectangleShape2D_wutbp")
 
-[node name="Water" parent="." instance=ExtResource("4_wutbp")]
-position = Vector2(8278.001, 1210)
-scale = Vector2(5, 5)
+[node name="Waterboxes" type="Node2D" parent="."]
+modulate = Color(0.74138474, 0.7413847, 0.74138457, 1)
+
+[node name="Water" parent="Waterboxes" instance=ExtResource("4_wutbp")]
+position = Vector2(3955, 1199)
+scale = Vector2(10, 5)
+spawn_point_path = NodePath("../SpawnPoint")
+
+[node name="SpawnPoint" type="Marker2D" parent="Waterboxes"]
+position = Vector2(-736, 678)
+
+[node name="lillyPads" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="lillyPads"]
+position = Vector2(37, -4)
+
+[node name="Sprite2D" type="Sprite2D" parent="lillyPads/StaticBody2D"]
+position = Vector2(3232, 1312)
+scale = Vector2(6.4921865, 4.2421875)
+texture = ExtResource("6_vfmta")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lillyPads/StaticBody2D"]
+position = Vector2(3229.5, 1338)
+shape = SubResource("RectangleShape2D_qemeo")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="lillyPads"]
+position = Vector2(1445, -12)
+
+[node name="Sprite2D" type="Sprite2D" parent="lillyPads/StaticBody2D2"]
+position = Vector2(3232, 1312)
+scale = Vector2(6.4921865, 4.2421875)
+texture = ExtResource("6_vfmta")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lillyPads/StaticBody2D2"]
+position = Vector2(3229.5, 1338)
+shape = SubResource("RectangleShape2D_qemeo")
+
+[node name="Dog" parent="." groups=["player"] instance=ExtResource("2_1geof")]
+position = Vector2(-729, 670)
+
+[node name="Camera2D" type="Camera2D" parent="Dog"]
+zoom = Vector2(0.7, 0.7)
+limit_left = -1800
+limit_top = -450
+limit_bottom = 1600
 
 [node name="Platforms" type="Node2D" parent="."]
 
 [node name="StaticBody2D" parent="Platforms" instance=ExtResource("3_27vhs")]
-modulate = Color(0.6872149, 0.68721503, 0.6872149, 1)
-position = Vector2(968, 557)
-scale = Vector2(41.158028, 13.0594425)
+modulate = Color(0.6480781, 0.64807814, 0.6480781, 1)
+position = Vector2(7.000122, 543)
+scale = Vector2(15, 13)
 
 [node name="StaticBody2D2" parent="Platforms" instance=ExtResource("3_27vhs")]
-visible = false
-modulate = Color(0.3689597, 0.3434021, 0.31718084, 1)
-position = Vector2(-3502, -730)
-rotation = -1.5572245
-scale = Vector2(25.990915, 20.53961)
+modulate = Color(0.64705884, 0.64705884, 0.64705884, 1)
+position = Vector2(7633, 508)
+scale = Vector2(13, 13)
 
-[node name="StaticBody2D3" parent="Platforms" instance=ExtResource("3_27vhs")]
-position = Vector2(2115, 988.00006)
-scale = Vector2(6.305468, 4.099443)
+[node name="Foregrounds" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Foregrounds"]
+modulate = Color(0.61339027, 0.61339027, 0.61339027, 1)
+position = Vector2(-518, 1663)
+scale = Vector2(20.241796, 35.350002)
+texture = ExtResource("7_qemeo")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Foregrounds"]
+modulate = Color(0.61339027, 0.61339027, 0.61339027, 1)
+position = Vector2(6142, 1772)
+scale = Vector2(20.241796, 35.350002)
+texture = ExtResource("7_qemeo")
+flip_h = true
+
+[node name="Sprite2D3" type="Sprite2D" parent="Foregrounds"]
+modulate = Color(0.61339027, 0.61339027, 0.61339027, 1)
+position = Vector2(12474, 1812)
+scale = Vector2(20.241796, 35.350002)
+texture = ExtResource("7_qemeo")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Foregrounds"]
+modulate = Color(0.61339027, 0.61339027, 0.61339027, 1)
+position = Vector2(18412, 1556)
+scale = Vector2(20.241796, 35.350002)
+texture = ExtResource("7_qemeo")
