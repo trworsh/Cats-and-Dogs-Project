@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://by8drkowy5h6v"]
+[gd_scene load_steps=11 format=3 uid="uid://by8drkowy5h6v"]
 
 [ext_resource type="Texture2D" uid="uid://b1ullyx05203k" path="res://NatureLevel/Images/Background/TreeFront.png" id="1_bbnc1"]
+[ext_resource type="AudioStream" uid="uid://bdmvqb4cjuso0" path="res://Music/level_music.mp3" id="1_fqru3"]
 [ext_resource type="PackedScene" uid="uid://bwk8wrqtj260w" path="res://dog.tscn" id="2_1geof"]
-[ext_resource type="PackedScene" path="res://platform.tscn" id="3_27vhs"]
+[ext_resource type="PackedScene" uid="uid://dwejwthfke6gj" path="res://platform.tscn" id="3_27vhs"]
 [ext_resource type="Texture2D" uid="uid://hnp1go8qbo70" path="res://Images/Platforms/SideHouse-export.png" id="3_wutbp"]
 [ext_resource type="PackedScene" uid="uid://dlyvomy23epxr" path="res://water.tscn" id="4_wutbp"]
 [ext_resource type="Texture2D" uid="uid://dtyqdklbyfyhe" path="res://Images/Platforms/LillyPad.png" id="6_vfmta"]
@@ -15,6 +16,11 @@ size = Vector2(57.044083, 155.93587)
 size = Vector2(383, 48)
 
 [node name="Node2D" type="Node2D"]
+
+[node name="Forest Background Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_fqru3")
+volume_db = -23.853
+autoplay = true
 
 [node name="Backgrounds" type="Node2D" parent="."]
 
