@@ -62,7 +62,6 @@ position = Vector2(-0.99998474, 1.0000153)
 scale = Vector2(15.59375, 15.59375)
 sprite_frames = SubResource("SpriteFrames_kgn2u")
 animation = &"fall"
-flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(13.75, -3.5)
