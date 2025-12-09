@@ -7,40 +7,44 @@
 
 [node name="City_level" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Backgrounds" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Backgrounds"]
 position = Vector2(966, 541.99994)
 scale = Vector2(6.0375, 5.955555)
 texture = ExtResource("1_fda8d")
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
+[node name="Sprite2D2" type="Sprite2D" parent="Backgrounds"]
 z_index = -1
 position = Vector2(-659.99994, 542)
 scale = Vector2(6.0375, 5.955555)
 texture = ExtResource("1_fda8d")
 
-[node name="Sprite2D3" type="Sprite2D" parent="."]
+[node name="Sprite2D3" type="Sprite2D" parent="Backgrounds"]
 z_index = -2
 position = Vector2(-2275, 542)
 scale = Vector2(6.0375, 5.955555)
 texture = ExtResource("1_fda8d")
 
-[node name="CityPlatform" parent="." instance=ExtResource("3_hikgi")]
+[node name="SidewalkPlatforms" type="Node2D" parent="."]
+
+[node name="CityPlatform" parent="SidewalkPlatforms" instance=ExtResource("3_hikgi")]
 z_index = -4
 position = Vector2(960, 518.00006)
 scale = Vector2(6.1, 7)
 
-[node name="CityPlatform4" parent="." instance=ExtResource("3_hikgi")]
+[node name="CityPlatform4" parent="SidewalkPlatforms" instance=ExtResource("3_hikgi")]
 z_index = -4
 position = Vector2(2201, 292.00006)
 rotation = 1.5606685
-scale = Vector2(6.1, 7)
+scale = Vector2(6.1000004, 7.0000005)
 
-[node name="CityPlatform2" parent="." instance=ExtResource("3_hikgi")]
+[node name="CityPlatform2" parent="SidewalkPlatforms" instance=ExtResource("3_hikgi")]
 z_index = -5
 position = Vector2(-919, 518.00006)
 scale = Vector2(6.1, 7)
 
-[node name="CityPlatform3" parent="." instance=ExtResource("3_hikgi")]
+[node name="CityPlatform3" parent="SidewalkPlatforms" instance=ExtResource("3_hikgi")]
 z_index = -5
 position = Vector2(-2795.9998, 518.00006)
 scale = Vector2(6.1, 7)
@@ -49,13 +53,170 @@ scale = Vector2(6.1, 7)
 position = Vector2(1654, 645)
 scale = Vector2(0.3, 0.3)
 speed = 500.0
-gravity = 750.0
-jump_force = 600.0
+gravity = 1000.0
+jump_force = 625.0
 
 [node name="Camera2D" type="Camera2D" parent="cat"]
 zoom = Vector2(2, 2)
+limit_top = 8
 limit_right = 1925
 
-[node name="Node2D" parent="." instance=ExtResource("4_d6ati")]
+[node name="SmallBalconyPlatforms" type="Node2D" parent="."]
+
+[node name="balcony" parent="SmallBalconyPlatforms" instance=ExtResource("4_d6ati")]
+position = Vector2(1812, 363)
+scale = Vector2(3.2, 3)
+
+[node name="Node2D" parent="SmallBalconyPlatforms" instance=ExtResource("4_d6ati")]
 position = Vector2(1811.0001, 501)
 scale = Vector2(3.2, 3)
+
+[node name="balcony2" parent="SmallBalconyPlatforms" instance=ExtResource("4_d6ati")]
+position = Vector2(1811, 220)
+scale = Vector2(3.2, 3)
+
+[node name="balcony3" parent="SmallBalconyPlatforms" instance=ExtResource("4_d6ati")]
+position = Vector2(921, 406)
+scale = Vector2(3.2, 3)
+
+[node name="balcony4" parent="SmallBalconyPlatforms" instance=ExtResource("4_d6ati")]
+position = Vector2(918, 524)
+scale = Vector2(3.8, 3)
+
+[node name="balcony5" parent="SmallBalconyPlatforms" instance=ExtResource("4_d6ati")]
+position = Vector2(764, 524)
+scale = Vector2(3.5, 3)
+
+[node name="balcony6" parent="SmallBalconyPlatforms" instance=ExtResource("4_d6ati")]
+position = Vector2(758, 406.00003)
+scale = Vector2(3.2, 3)
+
+[node name="balcony7" parent="SmallBalconyPlatforms" instance=ExtResource("4_d6ati")]
+position = Vector2(758, 244)
+scale = Vector2(3.2, 3)
+
+[node name="balcony8" parent="SmallBalconyPlatforms" instance=ExtResource("4_d6ati")]
+position = Vector2(921, 245)
+scale = Vector2(3.2, 3)
+
+[node name="balcony9" parent="SmallBalconyPlatforms" instance=ExtResource("4_d6ati")]
+position = Vector2(-705, 405)
+scale = Vector2(3.2, 3)
+
+[node name="balcony10" parent="SmallBalconyPlatforms" instance=ExtResource("4_d6ati")]
+position = Vector2(-868, 405)
+scale = Vector2(3.2, 3)
+
+[node name="balcony11" parent="SmallBalconyPlatforms" instance=ExtResource("4_d6ati")]
+position = Vector2(-705, 244)
+scale = Vector2(3.2, 3)
+
+[node name="balcony12" parent="SmallBalconyPlatforms" instance=ExtResource("4_d6ati")]
+position = Vector2(-867, 244.00002)
+scale = Vector2(3.2, 3)
+
+[node name="balcony13" parent="SmallBalconyPlatforms" instance=ExtResource("4_d6ati")]
+position = Vector2(-708, 524)
+scale = Vector2(3.5, 3)
+
+[node name="balcony14" parent="SmallBalconyPlatforms" instance=ExtResource("4_d6ati")]
+position = Vector2(-863, 524)
+scale = Vector2(3.5, 3)
+
+[node name="balcony15" parent="SmallBalconyPlatforms" instance=ExtResource("4_d6ati")]
+position = Vector2(-2320, 405)
+scale = Vector2(3.2, 3)
+
+[node name="balcony16" parent="SmallBalconyPlatforms" instance=ExtResource("4_d6ati")]
+position = Vector2(-2482, 406.00003)
+scale = Vector2(3.2, 3)
+
+[node name="balcony17" parent="SmallBalconyPlatforms" instance=ExtResource("4_d6ati")]
+position = Vector2(-2484, 244)
+scale = Vector2(3.2, 3)
+
+[node name="balcony18" parent="SmallBalconyPlatforms" instance=ExtResource("4_d6ati")]
+position = Vector2(-2320, 244)
+scale = Vector2(3.2, 3)
+
+[node name="balcony19" parent="SmallBalconyPlatforms" instance=ExtResource("4_d6ati")]
+position = Vector2(-2478.0002, 524)
+scale = Vector2(3.5, 3)
+
+[node name="balcony20" parent="SmallBalconyPlatforms" instance=ExtResource("4_d6ati")]
+position = Vector2(-2322, 524)
+scale = Vector2(3.8, 3)
+
+[node name="LongBalconyplatforms" type="Node2D" parent="."]
+
+[node name="balcony16" parent="LongBalconyplatforms" instance=ExtResource("4_d6ati")]
+position = Vector2(-2850, 460)
+scale = Vector2(7, 3.5)
+
+[node name="balcony17" parent="LongBalconyplatforms" instance=ExtResource("4_d6ati")]
+position = Vector2(-2848, 285)
+scale = Vector2(7, 3.5)
+
+[node name="balcony18" parent="LongBalconyplatforms" instance=ExtResource("4_d6ati")]
+position = Vector2(-2848, 131)
+scale = Vector2(7, 3.5)
+
+[node name="balcony19" parent="LongBalconyplatforms" instance=ExtResource("4_d6ati")]
+position = Vector2(-1235, 461)
+scale = Vector2(7, 3.5)
+
+[node name="balcony20" parent="LongBalconyplatforms" instance=ExtResource("4_d6ati")]
+position = Vector2(-1233, 286)
+scale = Vector2(7, 3.5)
+
+[node name="balcony21" parent="LongBalconyplatforms" instance=ExtResource("4_d6ati")]
+position = Vector2(-1233, 132)
+scale = Vector2(7, 3.5)
+
+[node name="balcony22" parent="LongBalconyplatforms" instance=ExtResource("4_d6ati")]
+position = Vector2(391, 461)
+scale = Vector2(7, 3.5)
+
+[node name="balcony23" parent="LongBalconyplatforms" instance=ExtResource("4_d6ati")]
+position = Vector2(393, 286)
+scale = Vector2(7, 3.5)
+
+[node name="balcony24" parent="LongBalconyplatforms" instance=ExtResource("4_d6ati")]
+position = Vector2(393, 132)
+scale = Vector2(7, 3.5)
+
+[node name="balcony25" parent="LongBalconyplatforms" instance=ExtResource("4_d6ati")]
+position = Vector2(-1932, 506.00006)
+scale = Vector2(10, 4)
+
+[node name="balcony26" parent="LongBalconyplatforms" instance=ExtResource("4_d6ati")]
+position = Vector2(-1932, 340)
+scale = Vector2(10, 4)
+
+[node name="balcony27" parent="LongBalconyplatforms" instance=ExtResource("4_d6ati")]
+position = Vector2(-1932, 160)
+scale = Vector2(10, 4)
+
+[node name="balcony28" parent="LongBalconyplatforms" instance=ExtResource("4_d6ati")]
+position = Vector2(-325, 506.00006)
+scale = Vector2(10, 4)
+
+[node name="balcony29" parent="LongBalconyplatforms" instance=ExtResource("4_d6ati")]
+position = Vector2(-325, 340)
+scale = Vector2(10, 4)
+
+[node name="balcony30" parent="LongBalconyplatforms" instance=ExtResource("4_d6ati")]
+position = Vector2(-325, 160)
+scale = Vector2(10, 4)
+
+[node name="balcony31" parent="LongBalconyplatforms" instance=ExtResource("4_d6ati")]
+position = Vector2(1309, 507.00006)
+scale = Vector2(10, 4)
+
+[node name="balcony32" parent="LongBalconyplatforms" instance=ExtResource("4_d6ati")]
+position = Vector2(1309, 341)
+scale = Vector2(10, 4)
+
+[node name="balcony33" parent="LongBalconyplatforms" instance=ExtResource("4_d6ati")]
+position = Vector2(1309, 161)
+scale = Vector2(10, 4)
