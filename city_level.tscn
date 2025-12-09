@@ -12,8 +12,37 @@ position = Vector2(966, 541.99994)
 scale = Vector2(6.0375, 5.955555)
 texture = ExtResource("1_fda8d")
 
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(-659.99994, 542)
+scale = Vector2(6.0375, 5.955555)
+texture = ExtResource("1_fda8d")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(-2275, 542)
+scale = Vector2(6.0375, 5.955555)
+texture = ExtResource("1_fda8d")
+
 [node name="CityPlatform" parent="." instance=ExtResource("3_hikgi")]
-position = Vector2(960, 518)
+z_index = -4
+position = Vector2(960, 518.00006)
+scale = Vector2(6.1, 7)
+
+[node name="CityPlatform4" parent="." instance=ExtResource("3_hikgi")]
+z_index = -4
+position = Vector2(2201, 292.00006)
+rotation = 1.5606685
+scale = Vector2(6.1, 7)
+
+[node name="CityPlatform2" parent="." instance=ExtResource("3_hikgi")]
+z_index = -5
+position = Vector2(-919, 518.00006)
+scale = Vector2(6.1, 7)
+
+[node name="CityPlatform3" parent="." instance=ExtResource("3_hikgi")]
+z_index = -5
+position = Vector2(-2795.9998, 518.00006)
 scale = Vector2(6.1, 7)
 
 [node name="cat" parent="." instance=ExtResource("2_fda8d")]
@@ -25,6 +54,7 @@ jump_force = 600.0
 
 [node name="Camera2D" type="Camera2D" parent="cat"]
 zoom = Vector2(2, 2)
+limit_right = 1925
 
 [node name="Node2D" parent="." instance=ExtResource("4_d6ati")]
 position = Vector2(1811.0001, 501)
