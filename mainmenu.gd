@@ -17,11 +17,10 @@ func _on_options_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://OptionsMenu.tscn")
 
 func _on_cat_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://cattest.tscn")
+	get_tree().change_scene_to_file("res://city_level.tscn")
 
 func _on_dog_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://dogtest.tscn")
-
+	get_tree().change_scene_to_file("res://forest_level.tscn")
 
 func _on_replay_intro_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://Intro/Intro.tscn")

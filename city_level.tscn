@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dv1dp1wl1ca34"]
+[gd_scene load_steps=3 format=3 uid="uid://dv1dp1wl1ca34"]
 
 [ext_resource type="Texture2D" uid="uid://lho1av3u3bk2" path="res://Images/Backgrounds/CityBackground.png" id="1_rb03s"]
+[ext_resource type="PackedScene" uid="uid://bq2ljhsb0qd55" path="res://cat.tscn" id="2_fda8d"]
 
 [node name="City_level" type="Node2D"]
 
@@ -8,3 +9,8 @@
 position = Vector2(966, 541.99994)
 scale = Vector2(6.0375, 5.955555)
 texture = ExtResource("1_rb03s")
+
+[node name="cat" parent="." instance=ExtResource("2_fda8d")]
+position = Vector2(329, 753)
+
+[node name="Camera2D" type="Camera2D" parent="cat"]
