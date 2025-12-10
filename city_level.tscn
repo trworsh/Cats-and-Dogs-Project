@@ -1,10 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://dv1dp1wl1ca34"]
+[gd_scene load_steps=5 format=3 uid="uid://dv1dp1wl1ca34"]
 
+[ext_resource type="AudioStream" uid="uid://b8bxh4r27bmet" path="res://Music/level_music_pt_2.mp3" id="1_d6ati"]
 [ext_resource type="Texture2D" uid="uid://cxwsmidmoh7aa" path="res://Images/Backgrounds/CityBackground-1.png (1).png" id="1_fda8d"]
 [ext_resource type="PackedScene" uid="uid://bq2ljhsb0qd55" path="res://cat.tscn" id="2_fda8d"]
 [ext_resource type="PackedScene" uid="uid://cqxeeq46l8h4o" path="res://city_platform.tscn" id="3_hikgi"]
 
 [node name="City_level" type="Node2D"]
+
+[node name="LevelMusicPt2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_d6ati")
+volume_db = -10.496
+autoplay = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(966, 541.99994)
