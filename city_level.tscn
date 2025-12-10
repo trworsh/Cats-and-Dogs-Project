@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://dv1dp1wl1ca34"]
+[gd_scene load_steps=7 format=3 uid="uid://dv1dp1wl1ca34"]
 
 [ext_resource type="Texture2D" uid="uid://cxwsmidmoh7aa" path="res://Images/Backgrounds/CityBackground-1.png (1).png" id="1_fda8d"]
 [ext_resource type="PackedScene" uid="uid://bq2ljhsb0qd55" path="res://cat.tscn" id="2_fda8d"]
 [ext_resource type="PackedScene" uid="uid://cqxeeq46l8h4o" path="res://city_platform.tscn" id="3_hikgi"]
 [ext_resource type="PackedScene" uid="uid://wxk8mbdlt146" path="res://BalconySmall.tscn" id="4_d6ati"]
+[ext_resource type="AudioStream" uid="uid://dfsl7pon87yqi" path="res://Sounds/Carspassing.mp3" id="5_s87ww"]
+[ext_resource type="AudioStream" uid="uid://cpsgbbr8q74lw" path="res://Sounds/Backgroundpeople.mp3" id="6_8ltnv"]
 
 [node name="City_level" type="Node2D"]
 
@@ -220,3 +222,13 @@ scale = Vector2(10, 4)
 [node name="balcony33" parent="LongBalconyplatforms" instance=ExtResource("4_d6ati")]
 position = Vector2(1309, 161)
 scale = Vector2(10, 4)
+
+[node name="Cars" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_s87ww")
+volume_db = -23.853
+autoplay = true
+
+[node name="People" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_8ltnv")
+volume_db = -20.036
+autoplay = true
