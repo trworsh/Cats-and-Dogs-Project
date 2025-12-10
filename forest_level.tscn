@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://by8drkowy5h6v"]
+[gd_scene load_steps=15 format=3 uid="uid://by8drkowy5h6v"]
 
 [ext_resource type="Texture2D" uid="uid://b1ullyx05203k" path="res://NatureLevel/Images/Background/TreeFront.png" id="1_bbnc1"]
 [ext_resource type="AudioStream" uid="uid://bdmvqb4cjuso0" path="res://Music/level_music.mp3" id="1_fqru3"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dwejwthfke6gj" path="res://NaturePlatform.tscn" id="3_27vhs"]
 [ext_resource type="Texture2D" uid="uid://hnp1go8qbo70" path="res://Images/Platforms/SideHouse-export.png" id="3_wutbp"]
 [ext_resource type="PackedScene" uid="uid://dlyvomy23epxr" path="res://water.tscn" id="4_wutbp"]
+[ext_resource type="Texture2D" uid="uid://c271ouyn7dlfm" path="res://Images/Platforms/Branch12.png" id="6_r0kix"]
 [ext_resource type="Texture2D" uid="uid://dtyqdklbyfyhe" path="res://Images/Platforms/LillyPad.png" id="6_vfmta"]
 [ext_resource type="Texture2D" uid="uid://bnxo0ovifnwxa" path="res://Images/Backgrounds/TreesFront.png" id="7_qemeo"]
 [ext_resource type="AudioStream" uid="uid://dysq0k5dddxby" path="res://Sounds/Wind.mp3" id="9_nwfv3"]
@@ -16,6 +17,9 @@ size = Vector2(57.044083, 155.93587)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qemeo"]
 size = Vector2(383, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l5g3w"]
+size = Vector2(629, 88.75)
 
 [node name="Node2D" type="Node2D"]
 
@@ -52,6 +56,13 @@ scale = Vector2(15.5813675, -15.601439)
 texture = ExtResource("1_bbnc1")
 flip_h = true
 
+[node name="background5" type="Sprite2D" parent="Backgrounds"]
+position = Vector2(19798, 941)
+rotation = -3.1415925
+scale = Vector2(15.5813675, -15.601439)
+texture = ExtResource("1_bbnc1")
+flip_h = true
+
 [node name="SideHouse" type="Sprite2D" parent="."]
 modulate = Color(0.781407, 0.781407, 0.78140694, 1)
 position = Vector2(-362, 536)
@@ -74,6 +85,29 @@ scale = Vector2(10, 5)
 spawn_point_path = NodePath("../SpawnPoint")
 
 [node name="SpawnPoint" type="Marker2D" parent="Waterboxes"]
+position = Vector2(-736, 678)
+
+[node name="Waterboxes2" type="Node2D" parent="."]
+modulate = Color(0.74138474, 0.7413847, 0.74138457, 1)
+
+[node name="Water" parent="Waterboxes2" instance=ExtResource("4_wutbp")]
+position = Vector2(11302, 1178)
+scale = Vector2(10, 5)
+spawn_point_path = NodePath("../SpawnPoint")
+
+[node name="SpawnPoint" type="Marker2D" parent="Waterboxes2"]
+position = Vector2(-736, 678)
+
+[node name="Waterboxes3" type="Node2D" parent="."]
+modulate = Color(0.74138474, 0.7413847, 0.74138457, 1)
+position = Vector2(3156, 0)
+
+[node name="Water" parent="Waterboxes3" instance=ExtResource("4_wutbp")]
+position = Vector2(11302, 1178)
+scale = Vector2(10, 5)
+spawn_point_path = NodePath("../SpawnPoint")
+
+[node name="SpawnPoint" type="Marker2D" parent="Waterboxes3"]
 position = Vector2(-736, 678)
 
 [node name="lillyPads" type="Node2D" parent="."]
@@ -102,6 +136,142 @@ texture = ExtResource("6_vfmta")
 position = Vector2(3229.5, 1338)
 shape = SubResource("RectangleShape2D_qemeo")
 
+[node name="lillyPads2" type="Node2D" parent="."]
+position = Vector2(6972, -29)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="lillyPads2"]
+position = Vector2(37, -4)
+
+[node name="Sprite2D" type="Sprite2D" parent="lillyPads2/StaticBody2D"]
+position = Vector2(3232, 1312)
+scale = Vector2(6.4921865, 4.2421875)
+texture = ExtResource("6_vfmta")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lillyPads2/StaticBody2D"]
+position = Vector2(3229.5, 1338)
+shape = SubResource("RectangleShape2D_qemeo")
+
+[node name="lillyPads3" type="Node2D" parent="."]
+position = Vector2(12046, -43)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="lillyPads3"]
+position = Vector2(37, -4)
+
+[node name="Sprite2D" type="Sprite2D" parent="lillyPads3/StaticBody2D"]
+position = Vector2(3232, 1312)
+scale = Vector2(6.4921865, 4.2421875)
+texture = ExtResource("6_vfmta")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lillyPads3/StaticBody2D"]
+position = Vector2(3229.5, 1338)
+shape = SubResource("RectangleShape2D_qemeo")
+
+[node name="Branch" type="Node2D" parent="."]
+position = Vector2(8611, -236)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Branch"]
+position = Vector2(37, -4)
+
+[node name="Sprite2D" type="Sprite2D" parent="Branch/StaticBody2D"]
+position = Vector2(2092, 820)
+scale = Vector2(6.4921865, 4.2421875)
+texture = ExtResource("6_r0kix")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Branch/StaticBody2D"]
+position = Vector2(2101, 810)
+shape = SubResource("RectangleShape2D_l5g3w")
+one_way_collision = true
+one_way_collision_margin = 128.0
+
+[node name="Branch5" type="Node2D" parent="."]
+position = Vector2(10027, -639)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Branch5"]
+position = Vector2(37, -4)
+
+[node name="Sprite2D" type="Sprite2D" parent="Branch5/StaticBody2D"]
+position = Vector2(2092, 820)
+scale = Vector2(6.4921865, 4.2421875)
+texture = ExtResource("6_r0kix")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Branch5/StaticBody2D"]
+position = Vector2(2101, 826.75)
+shape = SubResource("RectangleShape2D_l5g3w")
+one_way_collision = true
+one_way_collision_margin = 128.0
+
+[node name="Branch6" type="Node2D" parent="."]
+position = Vector2(11593, -11)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Branch6"]
+position = Vector2(37, -4)
+
+[node name="Sprite2D" type="Sprite2D" parent="Branch6/StaticBody2D"]
+position = Vector2(2092, 820)
+scale = Vector2(6.4921865, 4.2421875)
+texture = ExtResource("6_r0kix")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Branch6/StaticBody2D"]
+position = Vector2(2101, 815.375)
+shape = SubResource("RectangleShape2D_l5g3w")
+one_way_collision = true
+one_way_collision_margin = 128.0
+
+[node name="Branch2" type="Node2D" parent="."]
+position = Vector2(8476, 330)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Branch2"]
+position = Vector2(37, -4)
+
+[node name="Sprite2D" type="Sprite2D" parent="Branch2/StaticBody2D"]
+position = Vector2(2092, 820)
+scale = Vector2(6.4921865, 4.2421875)
+texture = ExtResource("6_r0kix")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Branch2/StaticBody2D"]
+position = Vector2(2105, 825.5)
+shape = SubResource("RectangleShape2D_l5g3w")
+one_way_collision = true
+one_way_collision_margin = 128.0
+
+[node name="Branch3" type="Node2D" parent="."]
+position = Vector2(9507, 54)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Branch3"]
+position = Vector2(37, -4)
+
+[node name="Sprite2D" type="Sprite2D" parent="Branch3/StaticBody2D"]
+position = Vector2(2092, 820)
+scale = Vector2(6.4921865, 4.2421875)
+texture = ExtResource("6_r0kix")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Branch3/StaticBody2D"]
+position = Vector2(2105, 825.5)
+shape = SubResource("RectangleShape2D_l5g3w")
+one_way_collision = true
+one_way_collision_margin = 128.0
+
+[node name="Branch4" type="Node2D" parent="."]
+position = Vector2(9518, -455)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Branch4"]
+position = Vector2(37, -4)
+
+[node name="Sprite2D" type="Sprite2D" parent="Branch4/StaticBody2D"]
+position = Vector2(2092, 820)
+scale = Vector2(6.4921865, 4.2421875)
+texture = ExtResource("6_r0kix")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Branch4/StaticBody2D"]
+position = Vector2(2105, 825.5)
+shape = SubResource("RectangleShape2D_l5g3w")
+one_way_collision = true
+one_way_collision_margin = 128.0
+
 [node name="Dog" parent="." groups=["player"] instance=ExtResource("2_1geof")]
 position = Vector2(-729, 670)
 
@@ -121,6 +291,11 @@ scale = Vector2(15, 13)
 [node name="StaticBody2D2" parent="Platforms" instance=ExtResource("3_27vhs")]
 modulate = Color(0.64705884, 0.64705884, 0.64705884, 1)
 position = Vector2(7633, 508)
+scale = Vector2(13, 13)
+
+[node name="StaticBody2D3" parent="Platforms" instance=ExtResource("3_27vhs")]
+modulate = Color(0.64705884, 0.64705884, 0.64705884, 1)
+position = Vector2(18119, 506.00003)
 scale = Vector2(13, 13)
 
 [node name="Foregrounds" type="Node2D" parent="."]

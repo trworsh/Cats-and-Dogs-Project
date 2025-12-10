@@ -54,7 +54,7 @@ size = Vector2(274, 187)
 [node name="Dog" type="CharacterBody2D"]
 script = ExtResource("1_jurjn")
 speed = 1250.0
-jump_force = 500.0
+jump_force = 650.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-2.3841858e-07, 9.536743e-07)
