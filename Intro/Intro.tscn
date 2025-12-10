@@ -228,10 +228,10 @@ tracks/16/path = NodePath("Dog/Bark:playing")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
-"times": PackedFloat32Array(12.733334, 13.4),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(5.7431936, 6, 12.733334, 13.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [false, true]
+"values": [false, true, false, true]
 }
 tracks/17/type = "value"
 tracks/17/imported = false
@@ -240,10 +240,10 @@ tracks/17/path = NodePath("Cat/Meow:playing")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
-"times": PackedFloat32Array(12.7, 13.4),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(5.7431936, 6, 12.7, 13.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [false, true]
+"values": [false, true, false, true]
 }
 tracks/18/type = "value"
 tracks/18/imported = false
@@ -328,6 +328,30 @@ tracks/24/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("DogText:visible")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(0, 5.8, 6, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, false, true, false]
+}
+tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("CatText:visible")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"times": PackedFloat32Array(0, 5.8, 6, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, false, true, false]
 }
 
 [sub_resource type="Animation" id="Animation_7or2k"]
@@ -620,6 +644,30 @@ tracks/23/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("DogText:visible")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("CatText:visible")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xmi88"]
 _data = {
@@ -735,6 +783,57 @@ wait_time = 0.05
 [node name="VoiceSFX" type="AudioStreamPlayer" parent="Textbubble"]
 stream = ExtResource("8_16g1m")
 volume_db = -10.0
+
+[node name="DogText" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 167.0
+offset_top = -116.0
+offset_right = 207.0
+offset_bottom = -76.0
+
+[node name="DogGraphic" type="Sprite2D" parent="DogText"]
+position = Vector2(801.00006, 690)
+scale = Vector2(6.640625, 2.4375)
+texture = ExtResource("9_tddqi")
+flip_h = true
+
+[node name="Dog" type="Label" parent="DogText"]
+layout_mode = 0
+offset_left = 641.0
+offset_top = 657.0
+offset_right = 972.0
+offset_bottom = 758.0
+theme_override_colors/font_color = Color(0.105790995, 0.47740453, 0.6835267, 1)
+theme_override_fonts/font = ExtResource("10_pf2mr")
+theme_override_font_sizes/font_size = 48
+text = "I like the city!!
+"
+
+[node name="CatText" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 191.0
+offset_top = 10.0
+offset_right = 231.0
+offset_bottom = 50.0
+
+[node name="CatGraphic" type="Sprite2D" parent="CatText"]
+position = Vector2(801.00006, 690)
+scale = Vector2(6.640625, 2.4375)
+texture = ExtResource("9_tddqi")
+
+[node name="Cat" type="Label" parent="CatText"]
+layout_mode = 0
+offset_left = 608.0
+offset_top = 658.0
+offset_right = 997.0
+offset_bottom = 759.0
+theme_override_colors/font_color = Color(0.105790995, 0.47740453, 0.6835267, 1)
+theme_override_fonts/font = ExtResource("10_pf2mr")
+theme_override_font_sizes/font_size = 48
+text = "I like the Forest!!
+"
 
 [node name="Cat" type="AnimatedSprite2D" parent="."]
 position = Vector2(1650, 800)

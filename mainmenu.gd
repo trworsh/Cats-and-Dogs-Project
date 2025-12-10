@@ -8,7 +8,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	pass
+	if !$AudioStreamPlayer.playing:
+		$AudioStreamPlayer.play()
 
 func _on_quit_button_pressed() -> void:
 	get_tree().quit()

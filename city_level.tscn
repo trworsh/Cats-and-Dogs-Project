@@ -1,19 +1,32 @@
-[gd_scene load_steps=7 format=3 uid="uid://dv1dp1wl1ca34"]
+[gd_scene load_steps=15 format=3 uid="uid://dv1dp1wl1ca34"]
 
+[ext_resource type="Script" uid="uid://dnlt4qcyqjnbe" path="res://city_level.gd" id="1_5vlrr"]
 [ext_resource type="AudioStream" uid="uid://b8bxh4r27bmet" path="res://Music/level_music_pt_2.mp3" id="1_d6ati"]
 [ext_resource type="Texture2D" uid="uid://cxwsmidmoh7aa" path="res://Images/Backgrounds/CityBackground-1.png (1).png" id="1_fda8d"]
 [ext_resource type="PackedScene" uid="uid://bq2ljhsb0qd55" path="res://cat.tscn" id="2_fda8d"]
 [ext_resource type="PackedScene" uid="uid://cqxeeq46l8h4o" path="res://city_platform.tscn" id="3_hikgi"]
 [ext_resource type="PackedScene" uid="uid://wxk8mbdlt146" path="res://BalconySmall.tscn" id="5_s87ww"]
+[ext_resource type="PackedScene" uid="uid://k415cgwhrroy" path="res://hydrant.tscn" id="6_8ltnv"]
+[ext_resource type="PackedScene" uid="uid://cfj8autcbabet" path="res://pause_menu.tscn" id="6_qoar2"]
+[ext_resource type="Script" uid="uid://cns5cu5j732hj" path="res://forest_level_2.gd" id="7_l85sk"]
+[ext_resource type="AudioStream" uid="uid://cpsgbbr8q74lw" path="res://Sounds/Backgroundpeople.mp3" id="9_ogivv"]
+[ext_resource type="AudioStream" uid="uid://dfsl7pon87yqi" path="res://Sounds/Carspassing.mp3" id="10_qoar2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d6ati"]
 size = Vector2(145, 1082)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5vlrr"]
+size = Vector2(118, 680)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l85sk"]
+size = Vector2(150.99994, 6687)
+
 [node name="City_level" type="Node2D"]
+script = ExtResource("1_5vlrr")
 
 [node name="LevelMusicPt2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_d6ati")
-volume_db = -10.496
+volume_db = -15.0
 autoplay = true
 
 [node name="Backgrounds" type="Node2D" parent="."]
@@ -63,17 +76,20 @@ scale = Vector2(6.1, 7)
 position = Vector2(960, 518)
 scale = Vector2(6.1, 7)
 
-[node name="cat" parent="." instance=ExtResource("2_fda8d")]
+[node name="cat" parent="." groups=["player"] instance=ExtResource("2_fda8d")]
 position = Vector2(1654, 645)
 scale = Vector2(0.3, 0.3)
-speed = 500.0
+speed = 350.0
 gravity = 1000.0
 jump_force = 650.0
 
 [node name="Camera2D" type="Camera2D" parent="cat"]
 zoom = Vector2(2, 2)
+limit_left = -4765
 limit_top = 10
 limit_right = 1930
+
+[node name="PauseMenu" parent="." instance=ExtResource("6_qoar2")]
 
 [node name="BalconyPlatforms" type="Node2D" parent="."]
 
@@ -280,3 +296,64 @@ scale = Vector2(10, 5)
 [node name="balcony51" parent="BalconyPlatforms" instance=ExtResource("5_s87ww")]
 position = Vector2(1311, 507.00006)
 scale = Vector2(10, 5)
+
+[node name="Hydrants" type="Node2D" parent="."]
+
+[node name="Hydrant" parent="Hydrants" instance=ExtResource("6_8ltnv")]
+position = Vector2(1047.0001, 662.00006)
+scale = Vector2(1.45, 1.45)
+spawn_point_path = NodePath("../../Spawnpoint")
+
+[node name="Hydrant2" parent="Hydrants" instance=ExtResource("6_8ltnv")]
+position = Vector2(-552, 657.00006)
+scale = Vector2(1.45, 1.45)
+spawn_point_path = NodePath("../../Spawnpoint")
+
+[node name="Hydrant3" parent="Hydrants" instance=ExtResource("6_8ltnv")]
+position = Vector2(-2553, 656)
+scale = Vector2(1.45, 1.45)
+spawn_point_path = NodePath("../../Spawnpoint")
+
+[node name="Hydrant4" parent="Hydrants" instance=ExtResource("6_8ltnv")]
+position = Vector2(-4150, 650.00006)
+scale = Vector2(1.45, 1.45)
+spawn_point_path = NodePath("../../Spawnpoint")
+
+[node name="Hydrant5" parent="Hydrants" instance=ExtResource("6_8ltnv")]
+position = Vector2(-3722.0002, 653.00006)
+scale = Vector2(1.45, 1.45)
+spawn_point_path = NodePath("../../Spawnpoint")
+
+[node name="Hydrant6" parent="Hydrants" instance=ExtResource("6_8ltnv")]
+position = Vector2(-1514.0002, 660.00006)
+scale = Vector2(1.45, 1.45)
+spawn_point_path = NodePath("../../Spawnpoint")
+
+[node name="Spawnpoint" type="Marker2D" parent="."]
+position = Vector2(1657, 645)
+
+[node name="ForestLevel2" type="Area2D" parent="."]
+position = Vector2(-4659, 518)
+script = ExtResource("7_l85sk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ForestLevel2"]
+position = Vector2(-49, -162)
+shape = SubResource("RectangleShape2D_5vlrr")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(-746, -840)
+rotation = 1.5706731
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(772.9209, 642.0952)
+shape = SubResource("RectangleShape2D_l85sk")
+
+[node name="People" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_ogivv")
+volume_db = -20.0
+autoplay = true
+
+[node name="Car" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_qoar2")
+volume_db = -20.0
+autoplay = true

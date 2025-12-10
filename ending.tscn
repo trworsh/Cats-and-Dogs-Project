@@ -1,0 +1,549 @@
+[gd_scene load_steps=22 format=3 uid="uid://dtssjbpqf85i3"]
+
+[ext_resource type="Texture2D" uid="uid://bogfk0hkjg5dg" path="res://Images/Backgrounds/House.png" id="1_3740v"]
+[ext_resource type="Script" uid="uid://b3ve1pqociaej" path="res://ending.gd" id="1_udx4x"]
+[ext_resource type="Texture2D" uid="uid://b3k10lb6vm8vj" path="res://Images/TextBubble.png" id="2_220av"]
+[ext_resource type="Texture2D" uid="uid://1abgo7gsjho4" path="res://Intro/Images/HousePerson.png" id="2_udx4x"]
+[ext_resource type="FontFile" uid="uid://shfgnripfvo4" path="res://Fonts/gomarice_kinako_mochi.ttf" id="3_udx4x"]
+[ext_resource type="Script" uid="uid://bnk3gg1xua02f" path="res://Intro/label.gd" id="4_3y0yq"]
+[ext_resource type="AudioStream" uid="uid://jkrjgxyhh7q0" path="res://Sounds/Owner2.mp3" id="5_vdtgj"]
+[ext_resource type="Texture2D" uid="uid://brim4cm80rwb8" path="res://Images/Sprites/Cat/CatIdle.png" id="6_jjm3y"]
+[ext_resource type="Texture2D" uid="uid://dcgtjj2d5ra34" path="res://Images/Sprites/Cat/CatWalk.png" id="7_vpmjo"]
+[ext_resource type="Texture2D" uid="uid://dgckho5uehauu" path="res://Images/CatJump.png" id="8_r1ysc"]
+[ext_resource type="AudioStream" uid="uid://bx4il27pr52ke" path="res://Sounds/Meow.mp3" id="9_xla42"]
+[ext_resource type="Texture2D" uid="uid://bu8237recj02g" path="res://Images/Sprites/Dog/Dog Idle.png" id="10_jrbg3"]
+[ext_resource type="Texture2D" uid="uid://ca47ta17e4573" path="res://Images/Sprites/Dog/DogWalk.png" id="11_83rvv"]
+[ext_resource type="Texture2D" uid="uid://luoi1470dhe6" path="res://Images/Sprites/Dog/DogJump.png" id="12_m8mbc"]
+[ext_resource type="AudioStream" uid="uid://c1skowkf7wxop" path="res://Sounds/Bark.mp3" id="13_sxr6u"]
+[ext_resource type="AudioStream" uid="uid://bnrq5ul54ycdp" path="res://Sounds/tutorial_music.mp3" id="16_3y0yq"]
+
+[sub_resource type="Animation" id="Animation_lgkiu"]
+resource_name = "Ending"
+length = 18.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 13, 17.533333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Dog:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3.0333335),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1882, 791.00006), Vector2(1450, 791)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Dog:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 0, 1, 0, 1, 0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Cat:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.033333335, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(59, 804.00006), Vector2(400, 804)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Cat:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.033333335, 0.5, 1, 1.5, 2, 2.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 0, 1, 0, 1, 0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Cat/Meow:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(3.8, 4, 5.1130304),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Dog/Bark:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(3.8, 4, 5.1130304),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CatText:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 3.8, 4, 8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, false, true, false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Dogtext:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 3.8, 4, 8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, false, true, false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Background:texture")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(8.633333, 9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("1_3740v"), ExtResource("2_udx4x")]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Textbubble/BubbleGraphic:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 8.4, 9, 13.012867),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, false, true, false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Textbubble/BubbleText:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 9, 9.5, 13.012867),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, false, true, false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Textbubble/VoiceSFX:playing")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(9.333333, 9.5, 12.577878),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/13/type = "method"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath(".")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(17.866667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"go_to_menu"
+}]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Music:playing")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 17.96),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_wnvse"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Dog:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1882, 791.00006)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Dog:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Cat:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(59, 804.00006)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Cat:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Cat/Meow:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Dog/Bark:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CatText:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Dogtext:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Background:texture")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_3740v")]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Textbubble/BubbleGraphic:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Textbubble/BubbleText:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Textbubble/VoiceSFX:playing")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Music:playing")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_coum2"]
+_data = {
+&"Ending": SubResource("Animation_lgkiu"),
+&"RESET": SubResource("Animation_wnvse")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h6gk5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_jjm3y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_vpmjo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_r1ysc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nao3o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_jrbg3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_83rvv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_m8mbc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Ending" type="Node2D"]
+script = ExtResource("1_udx4x")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_coum2")
+}
+autoplay = "Ending"
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(960.00006, 540.5)
+scale = Vector2(6.0000005, 5.9944444)
+texture = ExtResource("1_3740v")
+
+[node name="Textbubble" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 990.0
+offset_top = 216.0
+offset_right = 1558.0
+offset_bottom = 370.0
+
+[node name="BubbleGraphic" type="NinePatchRect" parent="Textbubble"]
+layout_mode = 0
+offset_left = -141.0
+offset_top = -21.0
+offset_right = 601.0
+offset_bottom = 172.0
+texture = ExtResource("2_220av")
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="BubbleText" type="Label" parent="Textbubble"]
+top_level = true
+layout_mode = 0
+offset_left = 949.0
+offset_top = 264.0
+offset_right = 1620.0
+offset_bottom = 341.0
+theme_override_colors/font_color = Color(0.13333334, 0.5921569, 0.7294118, 1)
+theme_override_fonts/font = ExtResource("3_udx4x")
+theme_override_font_sizes/font_size = 36
+text = "I'm Home! I hope you two got along!"
+autowrap_mode = 3
+script = ExtResource("4_3y0yq")
+
+[node name="LetterTimer" type="Timer" parent="Textbubble/BubbleText"]
+wait_time = 0.05
+
+[node name="VoiceSFX" type="AudioStreamPlayer" parent="Textbubble"]
+stream = ExtResource("5_vdtgj")
+volume_db = -10.0
+
+[node name="Cat" type="AnimatedSprite2D" parent="."]
+position = Vector2(59, 804.00006)
+scale = Vector2(15, 15)
+sprite_frames = SubResource("SpriteFrames_h6gk5")
+flip_h = true
+
+[node name="Meow" type="AudioStreamPlayer" parent="Cat"]
+stream = ExtResource("9_xla42")
+volume_db = -20.0
+
+[node name="Dog" type="AnimatedSprite2D" parent="."]
+position = Vector2(1882, 791.00006)
+scale = Vector2(15, 15)
+sprite_frames = SubResource("SpriteFrames_nao3o")
+
+[node name="Bark" type="AudioStreamPlayer" parent="Dog"]
+stream = ExtResource("13_sxr6u")
+volume_db = -20.0
+
+[node name="CatText" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -100.0
+offset_top = 12.0
+offset_right = -60.0
+offset_bottom = 52.0
+
+[node name="CatGraphic" type="Sprite2D" parent="CatText"]
+position = Vector2(1079, 569)
+scale = Vector2(10.929687, 3.8906248)
+texture = ExtResource("2_220av")
+flip_h = true
+
+[node name="Cat" type="Label" parent="CatText"]
+layout_mode = 0
+offset_left = 779.0
+offset_top = 527.0
+offset_right = 1433.0
+offset_bottom = 680.0
+theme_override_colors/font_color = Color(0.105790995, 0.47740453, 0.6835267, 1)
+theme_override_fonts/font = ExtResource("3_udx4x")
+theme_override_font_sizes/font_size = 48
+text = "The city doesn't seem so bad
+"
+autowrap_mode = 3
+
+[node name="Dogtext" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 318.0
+offset_top = -15.0
+offset_right = 358.0
+offset_bottom = 25.0
+
+[node name="DogGraphic" type="Sprite2D" parent="Dogtext"]
+position = Vector2(658, 740)
+scale = Vector2(8.523439, 3.3437495)
+texture = ExtResource("2_220av")
+
+[node name="Dog" type="Label" parent="Dogtext"]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 707.0
+offset_right = 872.0
+offset_bottom = 808.0
+theme_override_colors/font_color = Color(0.105790995, 0.47740453, 0.6835267, 1)
+theme_override_fonts/font = ExtResource("3_udx4x")
+theme_override_font_sizes/font_size = 48
+text = "The Forest was nice
+"
+
+[node name="Fade" type="ColorRect" parent="."]
+offset_right = 1919.0
+offset_bottom = 1073.0
+color = Color(0, 0, 0, 1)
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_3y0yq")
+volume_db = -10.0
+
+[connection signal="timeout" from="Textbubble/BubbleText/LetterTimer" to="Textbubble/BubbleText" method="_on_letter_timer_timeout"]

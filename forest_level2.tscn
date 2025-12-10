@@ -1,19 +1,19 @@
-[gd_scene load_steps=19 format=3 uid="uid://by8drkowy5h6v"]
+[gd_scene load_steps=19 format=3 uid="uid://8i4f0em5wc75"]
 
-[ext_resource type="Texture2D" uid="uid://b1ullyx05203k" path="res://NatureLevel/Images/Background/TreeFront.png" id="1_bbnc1"]
-[ext_resource type="AudioStream" uid="uid://bdmvqb4cjuso0" path="res://Music/level_music.mp3" id="1_fqru3"]
-[ext_resource type="Script" uid="uid://bltfhpcwjehwx" path="res://forest_level.gd" id="1_tvf0h"]
-[ext_resource type="PackedScene" uid="uid://bwk8wrqtj260w" path="res://dog.tscn" id="2_1geof"]
-[ext_resource type="PackedScene" uid="uid://dwejwthfke6gj" path="res://NaturePlatform.tscn" id="3_27vhs"]
-[ext_resource type="Texture2D" uid="uid://hnp1go8qbo70" path="res://Images/Platforms/SideHouse-export.png" id="3_wutbp"]
-[ext_resource type="PackedScene" uid="uid://dlyvomy23epxr" path="res://water.tscn" id="4_wutbp"]
-[ext_resource type="Texture2D" uid="uid://c271ouyn7dlfm" path="res://Images/Platforms/Branch12.png" id="6_r0kix"]
-[ext_resource type="Texture2D" uid="uid://dtyqdklbyfyhe" path="res://Images/Platforms/LillyPad.png" id="6_vfmta"]
-[ext_resource type="Texture2D" uid="uid://bnxo0ovifnwxa" path="res://Images/Backgrounds/TreesFront.png" id="7_qemeo"]
-[ext_resource type="AudioStream" uid="uid://dysq0k5dddxby" path="res://Sounds/Wind.mp3" id="9_nwfv3"]
-[ext_resource type="AudioStream" uid="uid://bxo8d3q24t8qt" path="res://Sounds/Birds.mp3" id="10_e433t"]
-[ext_resource type="Script" uid="uid://b7ai1rwaeijvj" path="res://city_level_2.gd" id="12_l5g3w"]
-[ext_resource type="PackedScene" uid="uid://cfj8autcbabet" path="res://pause_menu.tscn" id="14_vb15u"]
+[ext_resource type="AudioStream" uid="uid://bdmvqb4cjuso0" path="res://Music/level_music.mp3" id="1_4620f"]
+[ext_resource type="Script" uid="uid://bltfhpcwjehwx" path="res://forest_level.gd" id="1_s062h"]
+[ext_resource type="Texture2D" uid="uid://b1ullyx05203k" path="res://NatureLevel/Images/Background/TreeFront.png" id="2_s062h"]
+[ext_resource type="Texture2D" uid="uid://hnp1go8qbo70" path="res://Images/Platforms/SideHouse-export.png" id="3_haoeh"]
+[ext_resource type="PackedScene" uid="uid://dlyvomy23epxr" path="res://water.tscn" id="4_8j55e"]
+[ext_resource type="Texture2D" uid="uid://dtyqdklbyfyhe" path="res://Images/Platforms/LillyPad.png" id="5_p51ux"]
+[ext_resource type="Texture2D" uid="uid://c271ouyn7dlfm" path="res://Images/Platforms/Branch12.png" id="6_750qx"]
+[ext_resource type="PackedScene" uid="uid://bwk8wrqtj260w" path="res://dog.tscn" id="7_cvivu"]
+[ext_resource type="PackedScene" uid="uid://dwejwthfke6gj" path="res://NaturePlatform.tscn" id="8_mg8o6"]
+[ext_resource type="Texture2D" uid="uid://bnxo0ovifnwxa" path="res://Images/Backgrounds/TreesFront.png" id="9_cdpw5"]
+[ext_resource type="PackedScene" uid="uid://cfj8autcbabet" path="res://pause_menu.tscn" id="9_haoeh"]
+[ext_resource type="AudioStream" uid="uid://dysq0k5dddxby" path="res://Sounds/Wind.mp3" id="10_br4hb"]
+[ext_resource type="AudioStream" uid="uid://bxo8d3q24t8qt" path="res://Sounds/Birds.mp3" id="11_h7sfn"]
+[ext_resource type="Script" uid="uid://cj3s8oo1yiyjx" path="res://ending_transition.gd" id="12_4620f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wutbp"]
 size = Vector2(57.044083, 155.93587)
@@ -24,14 +24,14 @@ size = Vector2(383, 48)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l5g3w"]
 size = Vector2(629, 88.75)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tvf0h"]
-size = Vector2(1022, 1168)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s062h"]
+size = Vector2(1071, 1070)
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_tvf0h")
+script = ExtResource("1_s062h")
 
 [node name="Forest Background Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("1_fqru3")
+stream = ExtResource("1_4620f")
 volume_db = -20.0
 autoplay = true
 
@@ -41,40 +41,40 @@ autoplay = true
 position = Vector2(226, 940)
 rotation = 3.1415927
 scale = Vector2(15.5813675, -15.601439)
-texture = ExtResource("1_bbnc1")
+texture = ExtResource("2_s062h")
 
 [node name="background2" type="Sprite2D" parent="Backgrounds"]
 position = Vector2(5211, 939.99994)
 rotation = -3.1415925
 scale = Vector2(15.5813675, -15.601439)
-texture = ExtResource("1_bbnc1")
+texture = ExtResource("2_s062h")
 flip_h = true
 
 [node name="background3" type="Sprite2D" parent="Backgrounds"]
 position = Vector2(10191.02, 941.1299)
 rotation = -3.1415925
 scale = Vector2(15.5813675, -15.601439)
-texture = ExtResource("1_bbnc1")
+texture = ExtResource("2_s062h")
 
 [node name="background4" type="Sprite2D" parent="Backgrounds"]
 position = Vector2(15176.02, 941.1299)
 rotation = -3.1415925
 scale = Vector2(15.5813675, -15.601439)
-texture = ExtResource("1_bbnc1")
+texture = ExtResource("2_s062h")
 flip_h = true
 
 [node name="background5" type="Sprite2D" parent="Backgrounds"]
 position = Vector2(19798, 941)
 rotation = -3.1415925
 scale = Vector2(15.5813675, -15.601439)
-texture = ExtResource("1_bbnc1")
+texture = ExtResource("2_s062h")
 flip_h = true
 
 [node name="SideHouse" type="Sprite2D" parent="."]
 modulate = Color(0.781407, 0.781407, 0.78140694, 1)
 position = Vector2(-362, 536)
 scale = Vector2(9.501562, 8.409721)
-texture = ExtResource("3_wutbp")
+texture = ExtResource("3_haoeh")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="SideHouse"]
 
@@ -86,7 +86,7 @@ shape = SubResource("RectangleShape2D_wutbp")
 [node name="Waterboxes" type="Node2D" parent="."]
 modulate = Color(0.74138474, 0.7413847, 0.74138457, 1)
 
-[node name="Water" parent="Waterboxes" instance=ExtResource("4_wutbp")]
+[node name="Water" parent="Waterboxes" instance=ExtResource("4_8j55e")]
 position = Vector2(3955, 1199)
 scale = Vector2(10, 5)
 spawn_point_path = NodePath("../SpawnPoint")
@@ -97,7 +97,7 @@ position = Vector2(-736, 678)
 [node name="Waterboxes2" type="Node2D" parent="."]
 modulate = Color(0.74138474, 0.7413847, 0.74138457, 1)
 
-[node name="Water" parent="Waterboxes2" instance=ExtResource("4_wutbp")]
+[node name="Water" parent="Waterboxes2" instance=ExtResource("4_8j55e")]
 position = Vector2(11302, 1178)
 scale = Vector2(10, 5)
 spawn_point_path = NodePath("../SpawnPoint")
@@ -109,7 +109,7 @@ position = Vector2(-736, 678)
 modulate = Color(0.74138474, 0.7413847, 0.74138457, 1)
 position = Vector2(3156, 0)
 
-[node name="Water" parent="Waterboxes3" instance=ExtResource("4_wutbp")]
+[node name="Water" parent="Waterboxes3" instance=ExtResource("4_8j55e")]
 position = Vector2(11302, 1178)
 scale = Vector2(10, 5)
 spawn_point_path = NodePath("../SpawnPoint")
@@ -125,7 +125,7 @@ position = Vector2(37, -4)
 [node name="Sprite2D" type="Sprite2D" parent="lillyPads/StaticBody2D"]
 position = Vector2(3232, 1312)
 scale = Vector2(6.4921865, 4.2421875)
-texture = ExtResource("6_vfmta")
+texture = ExtResource("5_p51ux")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="lillyPads/StaticBody2D"]
 position = Vector2(3229.5, 1338)
@@ -137,7 +137,7 @@ position = Vector2(1445, -12)
 [node name="Sprite2D" type="Sprite2D" parent="lillyPads/StaticBody2D2"]
 position = Vector2(3232, 1312)
 scale = Vector2(6.4921865, 4.2421875)
-texture = ExtResource("6_vfmta")
+texture = ExtResource("5_p51ux")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="lillyPads/StaticBody2D2"]
 position = Vector2(3229.5, 1338)
@@ -152,7 +152,7 @@ position = Vector2(-146, 2)
 [node name="Sprite2D" type="Sprite2D" parent="lillyPads2/StaticBody2D"]
 position = Vector2(3232, 1312)
 scale = Vector2(6.4921865, 4.2421875)
-texture = ExtResource("6_vfmta")
+texture = ExtResource("5_p51ux")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="lillyPads2/StaticBody2D"]
 position = Vector2(3229.5, 1338)
@@ -167,7 +167,7 @@ position = Vector2(37, -4)
 [node name="Sprite2D" type="Sprite2D" parent="lillyPads3/StaticBody2D"]
 position = Vector2(3232, 1312)
 scale = Vector2(6.4921865, 4.2421875)
-texture = ExtResource("6_vfmta")
+texture = ExtResource("5_p51ux")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="lillyPads3/StaticBody2D"]
 position = Vector2(3229.5, 1338)
@@ -183,7 +183,7 @@ position = Vector2(37, -4)
 modulate = Color(0.7476796, 0.7476796, 0.7476796, 1)
 position = Vector2(2092, 820)
 scale = Vector2(6.4921865, 4.2421875)
-texture = ExtResource("6_r0kix")
+texture = ExtResource("6_750qx")
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Branch/StaticBody2D"]
@@ -202,7 +202,7 @@ position = Vector2(37, -4)
 modulate = Color(0.7490196, 0.7490196, 0.7490196, 1)
 position = Vector2(2092, 820)
 scale = Vector2(6.4921865, 4.2421875)
-texture = ExtResource("6_r0kix")
+texture = ExtResource("6_750qx")
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Branch5/StaticBody2D"]
@@ -221,7 +221,7 @@ position = Vector2(37, -4)
 modulate = Color(0.7490196, 0.7490196, 0.7490196, 1)
 position = Vector2(2092, 820)
 scale = Vector2(6.4921865, 4.2421875)
-texture = ExtResource("6_r0kix")
+texture = ExtResource("6_750qx")
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Branch6/StaticBody2D"]
@@ -240,7 +240,7 @@ position = Vector2(37, -4)
 modulate = Color(0.7490196, 0.7490196, 0.7490196, 1)
 position = Vector2(2092, 820)
 scale = Vector2(6.4921865, 4.2421875)
-texture = ExtResource("6_r0kix")
+texture = ExtResource("6_750qx")
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Branch2/StaticBody2D"]
@@ -259,7 +259,7 @@ position = Vector2(37, -4)
 modulate = Color(0.7490196, 0.7490196, 0.7490196, 1)
 position = Vector2(2092, 820)
 scale = Vector2(6.4921865, 4.2421875)
-texture = ExtResource("6_r0kix")
+texture = ExtResource("6_750qx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Branch3/StaticBody2D"]
 position = Vector2(2105, 825.5)
@@ -277,7 +277,7 @@ position = Vector2(37, -4)
 modulate = Color(0.7490196, 0.7490196, 0.7490196, 1)
 position = Vector2(2092, 820)
 scale = Vector2(6.4921865, 4.2421875)
-texture = ExtResource("6_r0kix")
+texture = ExtResource("6_750qx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Branch4/StaticBody2D"]
 position = Vector2(2105, 825.5)
@@ -285,7 +285,7 @@ shape = SubResource("RectangleShape2D_l5g3w")
 one_way_collision = true
 one_way_collision_margin = 128.0
 
-[node name="Dog" parent="." groups=["player"] instance=ExtResource("2_1geof")]
+[node name="Dog" parent="." groups=["player"] instance=ExtResource("7_cvivu")]
 position = Vector2(-729, 670)
 
 [node name="Camera2D" type="Camera2D" parent="Dog"]
@@ -296,21 +296,21 @@ limit_top = -450
 limit_right = 20100
 limit_bottom = 1600
 
-[node name="PauseMenu" parent="." instance=ExtResource("14_vb15u")]
+[node name="PauseMenu" parent="." instance=ExtResource("9_haoeh")]
 
 [node name="Platforms" type="Node2D" parent="."]
 
-[node name="StaticBody2D" parent="Platforms" instance=ExtResource("3_27vhs")]
+[node name="StaticBody2D" parent="Platforms" instance=ExtResource("8_mg8o6")]
 modulate = Color(0.6480781, 0.64807814, 0.6480781, 1)
 position = Vector2(7.000122, 543)
 scale = Vector2(15, 13)
 
-[node name="StaticBody2D2" parent="Platforms" instance=ExtResource("3_27vhs")]
+[node name="StaticBody2D2" parent="Platforms" instance=ExtResource("8_mg8o6")]
 modulate = Color(0.64705884, 0.64705884, 0.64705884, 1)
 position = Vector2(7633, 508)
 scale = Vector2(13, 13)
 
-[node name="StaticBody2D3" parent="Platforms" instance=ExtResource("3_27vhs")]
+[node name="StaticBody2D3" parent="Platforms" instance=ExtResource("8_mg8o6")]
 modulate = Color(0.64705884, 0.64705884, 0.64705884, 1)
 position = Vector2(18119, 506.00003)
 scale = Vector2(13, 13)
@@ -321,41 +321,41 @@ scale = Vector2(13, 13)
 modulate = Color(0.61339027, 0.61339027, 0.61339027, 1)
 position = Vector2(-518, 1663)
 scale = Vector2(20.241796, 35.350002)
-texture = ExtResource("7_qemeo")
+texture = ExtResource("9_cdpw5")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Foregrounds"]
 modulate = Color(0.61339027, 0.61339027, 0.61339027, 1)
 position = Vector2(6142, 1772)
 scale = Vector2(20.241796, 35.350002)
-texture = ExtResource("7_qemeo")
+texture = ExtResource("9_cdpw5")
 flip_h = true
 
 [node name="Sprite2D3" type="Sprite2D" parent="Foregrounds"]
 modulate = Color(0.61339027, 0.61339027, 0.61339027, 1)
 position = Vector2(12474, 1812)
 scale = Vector2(20.241796, 35.350002)
-texture = ExtResource("7_qemeo")
+texture = ExtResource("9_cdpw5")
 
 [node name="Sprite2D4" type="Sprite2D" parent="Foregrounds"]
 modulate = Color(0.61339027, 0.61339027, 0.61339027, 1)
 position = Vector2(18412, 1556)
 scale = Vector2(20.241796, 35.350002)
-texture = ExtResource("7_qemeo")
+texture = ExtResource("9_cdpw5")
 
 [node name="Wind" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("9_nwfv3")
+stream = ExtResource("10_br4hb")
 volume_db = -29.578
 autoplay = true
 
 [node name="Birds" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("10_e433t")
+stream = ExtResource("11_h7sfn")
 volume_db = -10.495
 autoplay = true
 
-[node name="CityLevel2" type="Area2D" parent="."]
-position = Vector2(18410, 848)
-script = ExtResource("12_l5g3w")
+[node name="EndingTransition" type="Area2D" parent="."]
+position = Vector2(18764, 1097)
+script = ExtResource("12_4620f")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CityLevel2"]
-position = Vector2(1260, -167)
-shape = SubResource("RectangleShape2D_tvf0h")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EndingTransition"]
+position = Vector2(890.5, -380)
+shape = SubResource("RectangleShape2D_s062h")

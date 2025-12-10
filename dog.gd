@@ -9,6 +9,7 @@ extends CharacterBody2D
 
 @onready var anim_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
+
 # Internal state
 var coyote_timer: float = 0.0
 var jump_buffer_timer: float = 0.0

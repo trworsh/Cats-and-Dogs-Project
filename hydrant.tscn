@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://k415cgwhrroy"]
+
+[ext_resource type="Script" uid="uid://e73r8bpah0ny" path="res://respawn.gd" id="1_1yom3"]
+[ext_resource type="Texture2D" uid="uid://cpmmeebanouvu" path="res://Images/Sprites/Spill1.png" id="2_5dfsv"]
+[ext_resource type="Texture2D" uid="uid://cfl2cd3qrao2c" path="res://Images/Sprites/Spill2.png" id="3_1sn2g"]
+[ext_resource type="Texture2D" uid="uid://qyx1ct085kw4" path="res://Images/Sprites/Spill3.png" id="4_mqny0"]
+[ext_resource type="Texture2D" uid="uid://damqqx37ebq3n" path="res://Images/Sprites/hydrant1.png" id="5_ostbs"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tj7uy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5dfsv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1sn2g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_mqny0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_swe3m"]
+size = Vector2(20, 231)
+
+[node name="Hydrant" type="Area2D"]
+script = ExtResource("1_1yom3")
+
+[node name="Spill" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -113.00001)
+scale = Vector2(1.375, 3.6399999)
+sprite_frames = SubResource("SpriteFrames_tj7uy")
+autoplay = "default"
+frame_progress = 0.7080595
+
+[node name="FireHydrant" type="Sprite2D" parent="."]
+texture = ExtResource("5_ostbs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -123.5)
+shape = SubResource("RectangleShape2D_swe3m")
