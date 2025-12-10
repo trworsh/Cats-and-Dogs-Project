@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://dv1dp1wl1ca34"]
+[gd_scene load_steps=7 format=3 uid="uid://dv1dp1wl1ca34"]
 
 [ext_resource type="AudioStream" uid="uid://b8bxh4r27bmet" path="res://Music/level_music_pt_2.mp3" id="1_d6ati"]
 [ext_resource type="Texture2D" uid="uid://cxwsmidmoh7aa" path="res://Images/Backgrounds/CityBackground-1.png (1).png" id="1_fda8d"]
 [ext_resource type="PackedScene" uid="uid://bq2ljhsb0qd55" path="res://cat.tscn" id="2_fda8d"]
 [ext_resource type="PackedScene" uid="uid://cqxeeq46l8h4o" path="res://city_platform.tscn" id="3_hikgi"]
+[ext_resource type="PackedScene" uid="uid://wxk8mbdlt146" path="res://BalconySmall.tscn" id="5_s87ww"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d6ati"]
+size = Vector2(145, 1082)
 
 [node name="City_level" type="Node2D"]
 
@@ -12,12 +16,50 @@ stream = ExtResource("1_d6ati")
 volume_db = -10.496
 autoplay = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Backgrounds" type="Node2D" parent="."]
+
+[node name="Sprite2D4" type="Sprite2D" parent="Backgrounds"]
+position = Vector2(-3798, 543)
+scale = Vector2(6.0375, 5.955555)
+texture = ExtResource("1_fda8d")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Backgrounds"]
+position = Vector2(-2199, 543.00006)
+scale = Vector2(6.0375, 5.955555)
+texture = ExtResource("1_fda8d")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Backgrounds"]
+position = Vector2(-632, 543)
+scale = Vector2(6.0375, 5.955555)
+texture = ExtResource("1_fda8d")
+
+[node name="Sprite2D" type="Sprite2D" parent="Backgrounds"]
 position = Vector2(966, 541.99994)
 scale = Vector2(6.0375, 5.955555)
 texture = ExtResource("1_fda8d")
 
-[node name="CityPlatform" parent="." instance=ExtResource("3_hikgi")]
+[node name="StaticBody2D" type="StaticBody2D" parent="Backgrounds"]
+position = Vector2(2065, 346)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Backgrounds/StaticBody2D"]
+position = Vector2(-62.5, 194)
+shape = SubResource("RectangleShape2D_d6ati")
+
+[node name="SidewalkPlatforms" type="Node2D" parent="."]
+
+[node name="CityPlatform4" parent="SidewalkPlatforms" instance=ExtResource("3_hikgi")]
+position = Vector2(-3800, 518)
+scale = Vector2(6.1, 7)
+
+[node name="CityPlatform3" parent="SidewalkPlatforms" instance=ExtResource("3_hikgi")]
+position = Vector2(-2100, 518)
+scale = Vector2(6.1, 7)
+
+[node name="CityPlatform2" parent="SidewalkPlatforms" instance=ExtResource("3_hikgi")]
+position = Vector2(-300, 518)
+scale = Vector2(6.1, 7)
+
+[node name="CityPlatform" parent="SidewalkPlatforms" instance=ExtResource("3_hikgi")]
 position = Vector2(960, 518)
 scale = Vector2(6.1, 7)
 
@@ -25,8 +67,216 @@ scale = Vector2(6.1, 7)
 position = Vector2(1654, 645)
 scale = Vector2(0.3, 0.3)
 speed = 500.0
-gravity = 750.0
-jump_force = 600.0
+gravity = 1000.0
+jump_force = 650.0
 
 [node name="Camera2D" type="Camera2D" parent="cat"]
 zoom = Vector2(2, 2)
+limit_top = 10
+limit_right = 1930
+
+[node name="BalconyPlatforms" type="Node2D" parent="."]
+
+[node name="balcony" parent="BalconyPlatforms" instance=ExtResource("5_s87ww")]
+position = Vector2(1811, 500)
+scale = Vector2(3.2, 3)
+
+[node name="balcony2" parent="BalconyPlatforms" instance=ExtResource("5_s87ww")]
+position = Vector2(1811, 220)
+scale = Vector2(3.2, 3)
+
+[node name="balcony3" parent="BalconyPlatforms" instance=ExtResource("5_s87ww")]
+position = Vector2(1811, 363)
+scale = Vector2(3.2, 3)
+
+[node name="balcony4" parent="BalconyPlatforms" instance=ExtResource("5_s87ww")]
+position = Vector2(918.00006, 525)
+scale = Vector2(3.8, 3)
+
+[node name="balcony5" parent="BalconyPlatforms" instance=ExtResource("5_s87ww")]
+position = Vector2(921, 245)
+scale = Vector2(3.2, 3)
+
+[node name="balcony6" parent="BalconyPlatforms" instance=ExtResource("5_s87ww")]
+position = Vector2(922, 405.00003)
+scale = Vector2(3.2, 3)
+
+[node name="balcony7" parent="BalconyPlatforms" instance=ExtResource("5_s87ww")]
+position = Vector2(761, 524)
+scale = Vector2(3.8, 3)
+
+[node name="balcony8" parent="BalconyPlatforms" instance=ExtResource("5_s87ww")]
+position = Vector2(758, 245)
+scale = Vector2(3.2, 3)
+
+[node name="balcony9" parent="BalconyPlatforms" instance=ExtResource("5_s87ww")]
+position = Vector2(758, 405.00003)
+scale = Vector2(3.2, 3)
+
+[node name="balcony10" parent="BalconyPlatforms" instance=ExtResource("5_s87ww")]
+position = Vector2(-680.99994, 526)
+scale = Vector2(3.8, 3)
+
+[node name="balcony11" parent="BalconyPlatforms" instance=ExtResource("5_s87ww")]
+position = Vector2(-678, 246)
+scale = Vector2(3.2, 3)
+
+[node name="balcony12" parent="BalconyPlatforms" instance=ExtResource("5_s87ww")]
+position = Vector2(-677, 406.00003)
+scale = Vector2(3.2, 3)
+
+[node name="balcony13" parent="BalconyPlatforms" instance=ExtResource("5_s87ww")]
+position = Vector2(-838, 525)
+scale = Vector2(3.8, 3)
+
+[node name="balcony14" parent="BalconyPlatforms" instance=ExtResource("5_s87ww")]
+position = Vector2(-841, 246)
+scale = Vector2(3.2, 3)
+
+[node name="balcony15" parent="BalconyPlatforms" instance=ExtResource("5_s87ww")]
+position = Vector2(-841, 406.00003)
+scale = Vector2(3.2, 3)
+
+[node name="balcony16" parent="BalconyPlatforms" instance=ExtResource("5_s87ww")]
+position = Vector2(-2247, 526)
+scale = Vector2(3.8, 3)
+
+[node name="balcony17" parent="BalconyPlatforms" instance=ExtResource("5_s87ww")]
+position = Vector2(-2244, 246)
+scale = Vector2(3.2, 3)
+
+[node name="balcony18" parent="BalconyPlatforms" instance=ExtResource("5_s87ww")]
+position = Vector2(-2243, 406.00003)
+scale = Vector2(3.2, 3)
+
+[node name="balcony19" parent="BalconyPlatforms" instance=ExtResource("5_s87ww")]
+position = Vector2(-2404, 525)
+scale = Vector2(3.8, 3)
+
+[node name="balcony20" parent="BalconyPlatforms" instance=ExtResource("5_s87ww")]
+position = Vector2(-2407, 246)
+scale = Vector2(3.2, 3)
+
+[node name="balcony21" parent="BalconyPlatforms" instance=ExtResource("5_s87ww")]
+position = Vector2(-2407, 406.00003)
+scale = Vector2(3.2, 3)
+
+[node name="balcony22" parent="BalconyPlatforms" instance=ExtResource("5_s87ww")]
+position = Vector2(-3846, 525)
+scale = Vector2(3.8, 3)
+
+[node name="balcony23" parent="BalconyPlatforms" instance=ExtResource("5_s87ww")]
+position = Vector2(-3843, 245)
+scale = Vector2(3.2, 3)
+
+[node name="balcony24" parent="BalconyPlatforms" instance=ExtResource("5_s87ww")]
+position = Vector2(-3842, 405.00003)
+scale = Vector2(3.2, 3)
+
+[node name="balcony25" parent="BalconyPlatforms" instance=ExtResource("5_s87ww")]
+position = Vector2(-4003, 524)
+scale = Vector2(3.8, 3)
+
+[node name="balcony26" parent="BalconyPlatforms" instance=ExtResource("5_s87ww")]
+position = Vector2(-4006, 245)
+scale = Vector2(3.2, 3)
+
+[node name="balcony27" parent="BalconyPlatforms" instance=ExtResource("5_s87ww")]
+position = Vector2(-4006, 405.00003)
+scale = Vector2(3.2, 3)
+
+[node name="balcony28" parent="BalconyPlatforms" instance=ExtResource("5_s87ww")]
+position = Vector2(392, 128)
+scale = Vector2(8, 5)
+
+[node name="balcony29" parent="BalconyPlatforms" instance=ExtResource("5_s87ww")]
+position = Vector2(392, 286)
+scale = Vector2(8, 5)
+
+[node name="balcony30" parent="BalconyPlatforms" instance=ExtResource("5_s87ww")]
+position = Vector2(393, 459)
+scale = Vector2(8, 5)
+
+[node name="balcony31" parent="BalconyPlatforms" instance=ExtResource("5_s87ww")]
+position = Vector2(-1206, 129)
+scale = Vector2(8, 5)
+
+[node name="balcony32" parent="BalconyPlatforms" instance=ExtResource("5_s87ww")]
+position = Vector2(-1206, 287)
+scale = Vector2(8, 5)
+
+[node name="balcony33" parent="BalconyPlatforms" instance=ExtResource("5_s87ww")]
+position = Vector2(-1205, 460)
+scale = Vector2(8, 5)
+
+[node name="balcony34" parent="BalconyPlatforms" instance=ExtResource("5_s87ww")]
+position = Vector2(-2774, 129)
+scale = Vector2(8, 5)
+
+[node name="balcony35" parent="BalconyPlatforms" instance=ExtResource("5_s87ww")]
+position = Vector2(-2774, 287)
+scale = Vector2(8, 5)
+
+[node name="balcony36" parent="BalconyPlatforms" instance=ExtResource("5_s87ww")]
+position = Vector2(-2773, 460)
+scale = Vector2(8, 5)
+
+[node name="balcony37" parent="BalconyPlatforms" instance=ExtResource("5_s87ww")]
+position = Vector2(-4373, 129)
+scale = Vector2(8, 5)
+
+[node name="balcony38" parent="BalconyPlatforms" instance=ExtResource("5_s87ww")]
+position = Vector2(-4373, 287)
+scale = Vector2(8, 5)
+
+[node name="balcony39" parent="BalconyPlatforms" instance=ExtResource("5_s87ww")]
+position = Vector2(-4372, 460)
+scale = Vector2(8, 5)
+
+[node name="balcony40" parent="BalconyPlatforms" instance=ExtResource("5_s87ww")]
+position = Vector2(-1857.0001, 168)
+scale = Vector2(10, 5)
+
+[node name="balcony41" parent="BalconyPlatforms" instance=ExtResource("5_s87ww")]
+position = Vector2(-1857, 341.00003)
+scale = Vector2(10, 5)
+
+[node name="balcony42" parent="BalconyPlatforms" instance=ExtResource("5_s87ww")]
+position = Vector2(-1855, 508.00006)
+scale = Vector2(10, 5)
+
+[node name="balcony43" parent="BalconyPlatforms" instance=ExtResource("5_s87ww")]
+position = Vector2(-288, 168)
+scale = Vector2(10, 5)
+
+[node name="balcony44" parent="BalconyPlatforms" instance=ExtResource("5_s87ww")]
+position = Vector2(-287.99988, 341.00003)
+scale = Vector2(10, 5)
+
+[node name="balcony45" parent="BalconyPlatforms" instance=ExtResource("5_s87ww")]
+position = Vector2(-285.99988, 508.00006)
+scale = Vector2(10, 5)
+
+[node name="balcony46" parent="BalconyPlatforms" instance=ExtResource("5_s87ww")]
+position = Vector2(-3456, 167)
+scale = Vector2(10, 5)
+
+[node name="balcony47" parent="BalconyPlatforms" instance=ExtResource("5_s87ww")]
+position = Vector2(-3455.9998, 340.00003)
+scale = Vector2(10, 5)
+
+[node name="balcony48" parent="BalconyPlatforms" instance=ExtResource("5_s87ww")]
+position = Vector2(-3453.9998, 507.00006)
+scale = Vector2(10, 5)
+
+[node name="balcony49" parent="BalconyPlatforms" instance=ExtResource("5_s87ww")]
+position = Vector2(1309, 167)
+scale = Vector2(10, 5)
+
+[node name="balcony50" parent="BalconyPlatforms" instance=ExtResource("5_s87ww")]
+position = Vector2(1309, 340.00003)
+scale = Vector2(10, 5)
+
+[node name="balcony51" parent="BalconyPlatforms" instance=ExtResource("5_s87ww")]
+position = Vector2(1311, 507.00006)
+scale = Vector2(10, 5)

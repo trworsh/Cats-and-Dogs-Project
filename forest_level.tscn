@@ -140,7 +140,7 @@ shape = SubResource("RectangleShape2D_qemeo")
 position = Vector2(6972, -29)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="lillyPads2"]
-position = Vector2(37, -4)
+position = Vector2(-146, 2)
 
 [node name="Sprite2D" type="Sprite2D" parent="lillyPads2/StaticBody2D"]
 position = Vector2(3232, 1312)
@@ -173,6 +173,7 @@ position = Vector2(8611, -236)
 position = Vector2(37, -4)
 
 [node name="Sprite2D" type="Sprite2D" parent="Branch/StaticBody2D"]
+modulate = Color(0.7476796, 0.7476796, 0.7476796, 1)
 position = Vector2(2092, 820)
 scale = Vector2(6.4921865, 4.2421875)
 texture = ExtResource("6_r0kix")
@@ -191,6 +192,7 @@ position = Vector2(10027, -639)
 position = Vector2(37, -4)
 
 [node name="Sprite2D" type="Sprite2D" parent="Branch5/StaticBody2D"]
+modulate = Color(0.7490196, 0.7490196, 0.7490196, 1)
 position = Vector2(2092, 820)
 scale = Vector2(6.4921865, 4.2421875)
 texture = ExtResource("6_r0kix")
@@ -209,6 +211,7 @@ position = Vector2(11593, -11)
 position = Vector2(37, -4)
 
 [node name="Sprite2D" type="Sprite2D" parent="Branch6/StaticBody2D"]
+modulate = Color(0.7490196, 0.7490196, 0.7490196, 1)
 position = Vector2(2092, 820)
 scale = Vector2(6.4921865, 4.2421875)
 texture = ExtResource("6_r0kix")
@@ -227,6 +230,7 @@ position = Vector2(8476, 330)
 position = Vector2(37, -4)
 
 [node name="Sprite2D" type="Sprite2D" parent="Branch2/StaticBody2D"]
+modulate = Color(0.7490196, 0.7490196, 0.7490196, 1)
 position = Vector2(2092, 820)
 scale = Vector2(6.4921865, 4.2421875)
 texture = ExtResource("6_r0kix")
@@ -245,6 +249,7 @@ position = Vector2(9507, 54)
 position = Vector2(37, -4)
 
 [node name="Sprite2D" type="Sprite2D" parent="Branch3/StaticBody2D"]
+modulate = Color(0.7490196, 0.7490196, 0.7490196, 1)
 position = Vector2(2092, 820)
 scale = Vector2(6.4921865, 4.2421875)
 texture = ExtResource("6_r0kix")
@@ -262,6 +267,7 @@ position = Vector2(9518, -455)
 position = Vector2(37, -4)
 
 [node name="Sprite2D" type="Sprite2D" parent="Branch4/StaticBody2D"]
+modulate = Color(0.7490196, 0.7490196, 0.7490196, 1)
 position = Vector2(2092, 820)
 scale = Vector2(6.4921865, 4.2421875)
 texture = ExtResource("6_r0kix")
