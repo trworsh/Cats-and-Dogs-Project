@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://by8drkowy5h6v"]
+[gd_scene load_steps=13 format=3 uid="uid://by8drkowy5h6v"]
 
 [ext_resource type="Texture2D" uid="uid://b1ullyx05203k" path="res://NatureLevel/Images/Background/TreeFront.png" id="1_bbnc1"]
 [ext_resource type="AudioStream" uid="uid://bdmvqb4cjuso0" path="res://Music/level_music.mp3" id="1_fqru3"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://dlyvomy23epxr" path="res://water.tscn" id="4_wutbp"]
 [ext_resource type="Texture2D" uid="uid://dtyqdklbyfyhe" path="res://Images/Platforms/LillyPad.png" id="6_vfmta"]
 [ext_resource type="Texture2D" uid="uid://bnxo0ovifnwxa" path="res://Images/Backgrounds/TreesFront.png" id="7_qemeo"]
+[ext_resource type="AudioStream" uid="uid://dysq0k5dddxby" path="res://Sounds/Wind.mp3" id="9_nwfv3"]
+[ext_resource type="AudioStream" uid="uid://bxo8d3q24t8qt" path="res://Sounds/Birds.mp3" id="10_e433t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wutbp"]
 size = Vector2(57.044083, 155.93587)
@@ -147,3 +149,13 @@ modulate = Color(0.61339027, 0.61339027, 0.61339027, 1)
 position = Vector2(18412, 1556)
 scale = Vector2(20.241796, 35.350002)
 texture = ExtResource("7_qemeo")
+
+[node name="Wind" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_nwfv3")
+volume_db = -29.578
+autoplay = true
+
+[node name="Birds" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_e433t")
+volume_db = -10.495
+autoplay = true
