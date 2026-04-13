@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://7kfa81p6jysv" path="res://mainmenu.gd" id="1_jix8l"]
 [ext_resource type="Texture2D" uid="uid://bt4fnbr4f7j6l" path="res://Images/Backgrounds/MainMenu.png" id="2_glbon"]
 [ext_resource type="FontFile" uid="uid://shfgnripfvo4" path="res://Fonts/gomarice_kinako_mochi.ttf" id="3_nlkkf"]
-[ext_resource type="AudioStream" uid="uid://qwx8mr5t71ey" path="res://Music/MainMenu.mp3" id="4_qe12f"]
+[ext_resource type="AudioStream" uid="uid://dfnh80vfygnc1" path="res://Music/Maxim Novak - 02 It's A Good Day.mp3" id="4_glbon"]
 [ext_resource type="Texture2D" uid="uid://06w0txm56qdd" path="res://NatureLevel/Images/Dogs Cats Logo yay.png" id="5_glbon"]
 
 [node name="MainMenu" type="Control"]
@@ -76,7 +76,7 @@ theme_override_font_sizes/font_size = 32
 text = "Replay Intro"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_qe12f")
+stream = ExtResource("4_glbon")
 volume_db = -20.0
 autoplay = true
 parameters/looping = true
