@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=3 uid="uid://by8drkowy5h6v"]
 
 [ext_resource type="Texture2D" uid="uid://b1ullyx05203k" path="res://NatureLevel/Images/Background/TreeFront.png" id="1_bbnc1"]
-[ext_resource type="AudioStream" uid="uid://bdmvqb4cjuso0" path="res://Music/level_music.mp3" id="1_fqru3"]
+[ext_resource type="AudioStream" uid="uid://bdmvqb4cjuso0" path="res://Music/level_musicback.mp3" id="1_fqru3"]
 [ext_resource type="Script" uid="uid://bltfhpcwjehwx" path="res://forest_level.gd" id="1_tvf0h"]
 [ext_resource type="PackedScene" uid="uid://bwk8wrqtj260w" path="res://dog.tscn" id="2_1geof"]
 [ext_resource type="PackedScene" uid="uid://dwejwthfke6gj" path="res://NaturePlatform.tscn" id="3_27vhs"]
