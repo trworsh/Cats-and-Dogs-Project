@@ -12,16 +12,41 @@ func _process(_delta: float) -> void:
 		$AudioStreamPlayer.play()
 
 func _on_quit_button_pressed() -> void:
+	$Click_UI.play()
 	get_tree().quit()
 
 func _on_options_button_pressed() -> void:
+	$Click_UI.play()
 	get_tree().change_scene_to_file("res://OptionsMenu.tscn")
 
 func _on_cat_button_pressed() -> void:
+	$Click_UI.play()
 	get_tree().change_scene_to_file("res://city_level.tscn")
 
 func _on_dog_button_pressed() -> void:
+	$Click_UI.play()
 	get_tree().change_scene_to_file("res://forest_level.tscn")
 
 func _on_replay_intro_button_pressed() -> void:
+	$Click_UI.play()
 	get_tree().change_scene_to_file("res://Intro/Intro.tscn")
+
+
+func _on_cat_button_mouse_entered() -> void:
+	$Hover_UI.play()
+
+
+func _on_dog_button_mouse_entered() -> void:
+	$Hover_UI.play()
+
+
+func _on_options_button_mouse_entered() -> void:
+	$Hover_UI.play()
+
+
+func _on_quit_button_mouse_entered() -> void:
+	$Hover_UI.play()
+
+
+func _on_replay_intro_button_mouse_entered() -> void:
+	$Hover_UI.play()

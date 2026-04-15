@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://bbbk3i2f6ppfi"]
+[gd_scene load_steps=9 format=3 uid="uid://bbbk3i2f6ppfi"]
 
 [ext_resource type="Script" uid="uid://7kfa81p6jysv" path="res://mainmenu.gd" id="1_jix8l"]
 [ext_resource type="Texture2D" uid="uid://bt4fnbr4f7j6l" path="res://Images/Backgrounds/MainMenu.png" id="2_glbon"]
 [ext_resource type="FontFile" uid="uid://shfgnripfvo4" path="res://Fonts/gomarice_kinako_mochi.ttf" id="3_nlkkf"]
 [ext_resource type="AudioStream" uid="uid://dfnh80vfygnc1" path="res://Music/Maxim Novak - 02 It's A Good Day.mp3" id="4_glbon"]
 [ext_resource type="Texture2D" uid="uid://06w0txm56qdd" path="res://NatureLevel/Images/Dogs Cats Logo yay.png" id="5_glbon"]
+[ext_resource type="AudioStream" uid="uid://b33vf804x7gt2" path="res://Sounds/ClassSounds/Cooke_Tap_UI.wav" id="5_qe12f"]
+[ext_resource type="AudioStream" uid="uid://dp5r7j7gr27rk" path="res://Sounds/ClassSounds/WindChime_UI.wav" id="6_8qtwp"]
+[ext_resource type="AudioStream" uid="uid://c1skowkf7wxop" path="res://Sounds/Bark.mp3" id="6_dy7ct"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -81,15 +84,32 @@ volume_db = -20.0
 autoplay = true
 parameters/looping = true
 
+[node name="Hover_UI" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_qe12f")
+volume_db = 10.0
+
+[node name="Dog_UI2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_dy7ct")
+volume_db = 10.0
+
+[node name="Click_UI" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_8qtwp")
+volume_db = 10.0
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(983, 248)
 scale = Vector2(0.7266667, 0.7266667)
 texture = ExtResource("5_glbon")
 
+[connection signal="mouse_entered" from="VBoxContainer/CatButton" to="." method="_on_cat_button_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/CatButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/CatButton" to="." method="_on_cat_button_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/DogButton" to="." method="_on_dog_button_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/DogButton" to="." method="_on_dog_button_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method=" _on_OptionsButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer2/ReplayIntroButton" to="." method="_on_replay_intro_button_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer2/ReplayIntroButton" to="." method="_on_replay_intro_button_pressed"]

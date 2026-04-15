@@ -1,8 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://8i4f0em5wc75"]
+[gd_scene load_steps=20 format=3 uid="uid://8i4f0em5wc75"]
 
-[ext_resource type="AudioStream" uid="uid://bdmvqb4cjuso0" path="res://Music/level_music.mp3" id="1_4620f"]
 [ext_resource type="Script" uid="uid://bltfhpcwjehwx" path="res://forest_level.gd" id="1_s062h"]
+[ext_resource type="AudioStream" uid="uid://d1clf7avfdfcl" path="res://Music/Squire Tuck - A Journey In To The Great Unknown.mp3" id="2_haoeh"]
 [ext_resource type="Texture2D" uid="uid://b1ullyx05203k" path="res://NatureLevel/Images/Background/TreeFront.png" id="2_s062h"]
+[ext_resource type="AudioStream" uid="uid://b256wpqj0d0bm" path="res://Sounds/ClassSounds/Forest_Wind.WAV" id="3_8j55e"]
 [ext_resource type="Texture2D" uid="uid://hnp1go8qbo70" path="res://Images/Platforms/SideHouse-export.png" id="3_haoeh"]
 [ext_resource type="PackedScene" uid="uid://dlyvomy23epxr" path="res://water.tscn" id="4_8j55e"]
 [ext_resource type="Texture2D" uid="uid://dtyqdklbyfyhe" path="res://Images/Platforms/LillyPad.png" id="5_p51ux"]
@@ -31,8 +32,12 @@ size = Vector2(1071, 1070)
 script = ExtResource("1_s062h")
 
 [node name="Forest Background Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("1_4620f")
+stream = ExtResource("2_haoeh")
 volume_db = -20.0
+autoplay = true
+
+[node name="Forest Wind" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_8j55e")
 autoplay = true
 
 [node name="Backgrounds" type="Node2D" parent="."]

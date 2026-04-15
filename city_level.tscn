@@ -1,9 +1,9 @@
 [gd_scene load_steps=15 format=3 uid="uid://dv1dp1wl1ca34"]
 
 [ext_resource type="Script" uid="uid://dnlt4qcyqjnbe" path="res://city_level.gd" id="1_5vlrr"]
-[ext_resource type="AudioStream" uid="uid://b8bxh4r27bmet" path="res://Music/level_music_pt_2.mp3" id="1_d6ati"]
 [ext_resource type="Texture2D" uid="uid://cxwsmidmoh7aa" path="res://Images/Backgrounds/CityBackground-1.png (1).png" id="1_fda8d"]
 [ext_resource type="PackedScene" uid="uid://bq2ljhsb0qd55" path="res://cat.tscn" id="2_fda8d"]
+[ext_resource type="AudioStream" uid="uid://bcexvd4xi231r" path="res://Music/Maxim Novak - 08 City Roads.mp3" id="2_qoar2"]
 [ext_resource type="PackedScene" uid="uid://cqxeeq46l8h4o" path="res://city_platform.tscn" id="3_hikgi"]
 [ext_resource type="PackedScene" uid="uid://wxk8mbdlt146" path="res://BalconySmall.tscn" id="5_s87ww"]
 [ext_resource type="PackedScene" uid="uid://k415cgwhrroy" path="res://hydrant.tscn" id="6_8ltnv"]
@@ -25,7 +25,7 @@ size = Vector2(150.99994, 6687)
 script = ExtResource("1_5vlrr")
 
 [node name="LevelMusicPt2" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("1_d6ati")
+stream = ExtResource("2_qoar2")
 volume_db = -15.0
 autoplay = true
 

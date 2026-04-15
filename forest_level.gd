@@ -6,6 +6,11 @@ func _process(_delta: float) -> void:
 		$"Forest Background Music".play()
 
 
+func process(_delta: float) -> void:
+	if !$"Forest Wind".playing:
+		$"Forest Wind".play()
+
+
 @onready var pause_menu = $PauseMenu
 
 func _input(event):

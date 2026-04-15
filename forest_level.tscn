@@ -1,9 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://by8drkowy5h6v"]
+[gd_scene load_steps=20 format=3 uid="uid://by8drkowy5h6v"]
 
 [ext_resource type="Texture2D" uid="uid://b1ullyx05203k" path="res://NatureLevel/Images/Background/TreeFront.png" id="1_bbnc1"]
-[ext_resource type="AudioStream" uid="uid://bdmvqb4cjuso0" path="res://Music/level_music.mp3" id="1_fqru3"]
 [ext_resource type="Script" uid="uid://bltfhpcwjehwx" path="res://forest_level.gd" id="1_tvf0h"]
 [ext_resource type="PackedScene" uid="uid://bwk8wrqtj260w" path="res://dog.tscn" id="2_1geof"]
+[ext_resource type="AudioStream" uid="uid://d1clf7avfdfcl" path="res://Music/Squire Tuck - A Journey In To The Great Unknown.mp3" id="2_vb15u"]
 [ext_resource type="PackedScene" uid="uid://dwejwthfke6gj" path="res://NaturePlatform.tscn" id="3_27vhs"]
 [ext_resource type="Texture2D" uid="uid://hnp1go8qbo70" path="res://Images/Platforms/SideHouse-export.png" id="3_wutbp"]
 [ext_resource type="PackedScene" uid="uid://dlyvomy23epxr" path="res://water.tscn" id="4_wutbp"]
@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://bxo8d3q24t8qt" path="res://Sounds/Birds.mp3" id="10_e433t"]
 [ext_resource type="Script" uid="uid://b7ai1rwaeijvj" path="res://city_level_2.gd" id="12_l5g3w"]
 [ext_resource type="PackedScene" uid="uid://cfj8autcbabet" path="res://pause_menu.tscn" id="14_vb15u"]
+[ext_resource type="AudioStream" uid="uid://b256wpqj0d0bm" path="res://Sounds/ClassSounds/Forest_Wind.WAV" id="15_6ya33"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wutbp"]
 size = Vector2(57.044083, 155.93587)
@@ -30,8 +31,12 @@ size = Vector2(1022, 1168)
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_tvf0h")
 
+[node name="Forest Wind" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_6ya33")
+autoplay = true
+
 [node name="Forest Background Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("1_fqru3")
+stream = ExtResource("2_vb15u")
 volume_db = -20.0
 autoplay = true
 

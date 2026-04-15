@@ -4,6 +4,11 @@ extends Area2D
 func _ready():
 	body_entered.connect(_on_body_entered)
 
+func process(_delta: float) -> void:
+	if !$"Forest Wind".playing:
+		$"Forest Wind".play()
+
+
 func _on_body_entered(_body):
 	if _body.is_in_group("player"):
 		get_tree().change_scene_to_file("res://forest_level2.tscn")

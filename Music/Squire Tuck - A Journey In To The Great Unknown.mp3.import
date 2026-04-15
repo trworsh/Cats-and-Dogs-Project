@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d1clf7avfdfcl"
+path="res://.godot/imported/Squire Tuck - A Journey In To The Great Unknown.mp3-108beae86f6b917fdc42430df04fa111.mp3str"
+
+[deps]
+
+source_file="res://Music/Squire Tuck - A Journey In To The Great Unknown.mp3"
+dest_files=["res://.godot/imported/Squire Tuck - A Journey In To The Great Unknown.mp3-108beae86f6b917fdc42430df04fa111.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

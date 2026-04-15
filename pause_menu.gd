@@ -20,9 +20,19 @@ func hide_pause_menu():
 
 
 func _on_resume_button_pressed() -> void:
+	$Click_UI.play()
 	hide_pause_menu()
 
 
 func _on_main_menu_button_pressed() -> void:
+	$Click_UI.play()
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://main_menu.tscn")
+
+
+func _on_resume_button_mouse_entered() -> void:
+	$Hover_UI.play()
+
+
+func _on_main_menu_button_mouse_entered() -> void:
+	$Hover_UI.play()
