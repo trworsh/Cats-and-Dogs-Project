@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://8i4f0em5wc75"]
+[gd_scene load_steps=21 format=3 uid="uid://8i4f0em5wc75"]
 
 [ext_resource type="Script" uid="uid://bltfhpcwjehwx" path="res://forest_level.gd" id="1_s062h"]
 [ext_resource type="AudioStream" uid="uid://d1clf7avfdfcl" path="res://Music/Squire Tuck - A Journey In To The Great Unknown.mp3" id="2_haoeh"]
@@ -15,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://dysq0k5dddxby" path="res://Sounds/Wind.mp3" id="10_br4hb"]
 [ext_resource type="AudioStream" uid="uid://bxo8d3q24t8qt" path="res://Sounds/Birds.mp3" id="11_h7sfn"]
 [ext_resource type="Script" uid="uid://cj3s8oo1yiyjx" path="res://ending_transition.gd" id="12_4620f"]
+[ext_resource type="AudioStream" uid="uid://cakcamlt1kx2d" path="res://Sounds/ClassSounds/SplashPuddle.wav" id="16_p51ux"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wutbp"]
 size = Vector2(57.044083, 155.93587)
@@ -364,3 +365,6 @@ script = ExtResource("12_4620f")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EndingTransition"]
 position = Vector2(890.5, -380)
 shape = SubResource("RectangleShape2D_s062h")
+
+[node name="Splash1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_p51ux")

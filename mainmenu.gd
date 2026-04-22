@@ -33,11 +33,11 @@ func _on_replay_intro_button_pressed() -> void:
 
 
 func _on_cat_button_mouse_entered() -> void:
-	$Hover_UI.play()
+	$Meow.play()
 
 
 func _on_dog_button_mouse_entered() -> void:
-	$Hover_UI.play()
+	$Dog_UI2.play()
 
 
 func _on_options_button_mouse_entered() -> void:

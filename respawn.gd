@@ -12,3 +12,4 @@ func _on_body_entered(body):
 		# Reset velocity if Player is a CharacterBody2D
 		if "velocity" in body:
 			body.velocity = Vector2.ZERO
+			$"../../Splash1".play()

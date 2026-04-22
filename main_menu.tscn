@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bbbk3i2f6ppfi"]
+[gd_scene load_steps=10 format=3 uid="uid://bbbk3i2f6ppfi"]
 
 [ext_resource type="Script" uid="uid://7kfa81p6jysv" path="res://mainmenu.gd" id="1_jix8l"]
 [ext_resource type="Texture2D" uid="uid://bt4fnbr4f7j6l" path="res://Images/Backgrounds/MainMenu.png" id="2_glbon"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://b33vf804x7gt2" path="res://Sounds/ClassSounds/Cooke_Tap_UI.wav" id="5_qe12f"]
 [ext_resource type="AudioStream" uid="uid://dp5r7j7gr27rk" path="res://Sounds/ClassSounds/WindChime_UI.wav" id="6_8qtwp"]
 [ext_resource type="AudioStream" uid="uid://c1skowkf7wxop" path="res://Sounds/Bark.mp3" id="6_dy7ct"]
+[ext_resource type="AudioStream" uid="uid://bx4il27pr52ke" path="res://Sounds/Meow.mp3" id="9_dy7ct"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -86,20 +87,23 @@ parameters/looping = true
 
 [node name="Hover_UI" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_qe12f")
-volume_db = 10.0
+volume_db = 15.0
 
 [node name="Dog_UI2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_dy7ct")
-volume_db = 10.0
 
 [node name="Click_UI" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_8qtwp")
 volume_db = 10.0
+pitch_scale = 0.5
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(983, 248)
 scale = Vector2(0.7266667, 0.7266667)
 texture = ExtResource("5_glbon")
+
+[node name="Meow" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_dy7ct")
 
 [connection signal="mouse_entered" from="VBoxContainer/CatButton" to="." method="_on_cat_button_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/CatButton" to="." method="_on_start_button_pressed"]
