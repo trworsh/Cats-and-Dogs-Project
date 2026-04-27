@@ -7,7 +7,8 @@ func _ready():
 func process(_delta: float) -> void:
 	if !$"Forest Wind".playing:
 		$"Forest Wind".play()
-
+	if !$"Birds".playing:
+		$"Birds".play()
 
 func _on_body_entered(_body):
 	if _body.is_in_group("player"):

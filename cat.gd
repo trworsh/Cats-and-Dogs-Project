@@ -37,6 +37,7 @@ func _physics_process(delta: float) -> void:
 
 	# --- Perform Jump ---
 	if jump_buffer_timer > 0.0 and coyote_timer > 0.0:
+		$JumpBoing.play()
 		velocity.y = -jump_force
 		jump_buffer_timer = 0.0
 		coyote_timer = 0.0

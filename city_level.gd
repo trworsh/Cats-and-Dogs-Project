@@ -4,7 +4,8 @@ extends Node2D
 func _process(_delta: float) -> void:
 	if !$LevelMusicPt2.playing:
 		$LevelMusicPt2.play()
-
+	if !$CitySound.playing:
+		$CitySound.play()
 
 @onready var pause_menu = $PauseMenu
 

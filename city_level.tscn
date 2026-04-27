@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dv1dp1wl1ca34"]
+[gd_scene load_steps=17 format=3 uid="uid://dv1dp1wl1ca34"]
 
 [ext_resource type="Script" uid="uid://dnlt4qcyqjnbe" path="res://city_level.gd" id="1_5vlrr"]
 [ext_resource type="Texture2D" uid="uid://cxwsmidmoh7aa" path="res://Images/Backgrounds/CityBackground-1.png (1).png" id="1_fda8d"]
@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://cpsgbbr8q74lw" path="res://Sounds/Backgroundpeople.mp3" id="9_ogivv"]
 [ext_resource type="AudioStream" uid="uid://dfsl7pon87yqi" path="res://Sounds/Carspassing.mp3" id="10_qoar2"]
 [ext_resource type="AudioStream" uid="uid://mhfl5v4iq7r7" path="res://Sounds/ClassSounds/WaterHydrant.wav" id="12_u4tms"]
+[ext_resource type="AudioStream" uid="uid://1vvpihwkarmr" path="res://Sounds/ClassSounds/CitySound.mp3" id="13_u5dnl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d6ati"]
 size = Vector2(145, 1082)
@@ -27,7 +28,7 @@ script = ExtResource("1_5vlrr")
 
 [node name="LevelMusicPt2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_qoar2")
-volume_db = -15.0
+volume_db = -5.0
 autoplay = true
 
 [node name="Backgrounds" type="Node2D" parent="."]
@@ -361,3 +362,7 @@ autoplay = true
 
 [node name="Splash1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_u4tms")
+
+[node name="CitySound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_u5dnl")
+volume_db = -15.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://5mbnjys8kdf1"]
+[gd_scene load_steps=14 format=3 uid="uid://5mbnjys8kdf1"]
 
 [ext_resource type="Script" uid="uid://dnlt4qcyqjnbe" path="res://city_level.gd" id="1_g6wrp"]
 [ext_resource type="AudioStream" uid="uid://bcexvd4xi231r" path="res://Music/Maxim Novak - 08 City Roads.mp3" id="2_lkg8d"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://k415cgwhrroy" path="res://hydrant.tscn" id="6_rrmo5"]
 [ext_resource type="Script" uid="uid://cj3s8oo1yiyjx" path="res://ending_transition.gd" id="6_wilna"]
 [ext_resource type="AudioStream" uid="uid://mhfl5v4iq7r7" path="res://Sounds/ClassSounds/WaterHydrant.wav" id="10_740ss"]
+[ext_resource type="AudioStream" uid="uid://1vvpihwkarmr" path="res://Sounds/ClassSounds/CitySound.mp3" id="11_dwq1d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d6ati"]
 size = Vector2(150.99994, 6687)
@@ -22,7 +23,7 @@ script = ExtResource("1_g6wrp")
 
 [node name="LevelMusicPt2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_lkg8d")
-volume_db = -10.496
+volume_db = -5.0
 autoplay = true
 
 [node name="Backgrounds" type="Node2D" parent="."]
@@ -346,3 +347,7 @@ position = Vector2(1654, 645)
 
 [node name="Splash1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_740ss")
+
+[node name="CitySound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_dwq1d")
+volume_db = -15.0
